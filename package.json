@@ -1,0 +1,37 @@
+{
+  "name": "govuk-frontend-types",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Types and schema for govuk-frontend",
+  "scripts": {
+    "lint": "eslint",
+    "test": "npm run lint",
+    "generate:docs": "jsdoc types.js -d docs -P package.json -R README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidjamesstone/govuk-frontend-types.git"
+  },
+  "keywords": [
+    "govuk",
+    "govuk-frontend",
+    "jsdoc",
+    "types",
+    "joi",
+    "schema"
+  ],
+  "author": "davidjamesstone@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidjamesstone/govuk-frontend-types/issues"
+  },
+  "homepage": "https://github.com/davidjamesstone/govuk-frontend-types#readme",
+  "devDependencies": {
+    "eslint-plugin-jsdoc": "^50.6.9",
+    "jsdoc": "^4.0.4",
+    "neostandard": "^0.12.1"
+  },
+  "peerDependencies": {
+    "joi": "^17.13.3"
+  }
+}
