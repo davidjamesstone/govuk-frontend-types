@@ -32,6 +32,6 @@
     "neostandard": "^0.12.1"
   },
   "peerDependencies": {
-    "joi": "^17.13.3"
+    "joi": "^18.0.1"
   }
 }
