@@ -9,13 +9,13 @@ export const tagFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('Tag schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Tag>} */
 export const tagSchema = tagFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('Tag schema')
 
 /** @type {joi.ObjectSchema} */
 export const fieldsetLegendFormSchema = joi
@@ -27,9 +27,8 @@ export const fieldsetLegendFormSchema = joi
     isPageHeading: joi.boolean().label('Is page heading')
   })
   .or('text', 'html')
-  .description('FieldsetLegend schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<FieldsetLegend>} */
 export const fieldsetLegendSchema = fieldsetLegendFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -41,14 +40,14 @@ export const fieldsetFormSchema = joi
     role: joi.string().allow('').label('Role'),
     html: joi.string().allow('').label('Html')
   })
-  .description('Fieldset schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Fieldset>} */
 export const fieldsetSchema = fieldsetFormSchema
   .append({
     legend: fieldsetLegendSchema.label('Legend'),
     attributes: joi.object().label('Attributes')
   })
+  .description('Fieldset schema')
 
 /** @type {joi.ObjectSchema} */
 export const errorMessageFormSchema = joi
@@ -61,13 +60,13 @@ export const errorMessageFormSchema = joi
     visuallyHiddenText: joi.string().allow('').label('Visually hidden text')
   })
   .or('text', 'html')
-  .description('ErrorMessage schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<ErrorMessage>} */
 export const errorMessageSchema = errorMessageFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('ErrorMessage schema')
 
 /** @type {joi.ObjectSchema} */
 export const hintFormSchema = joi
@@ -79,13 +78,13 @@ export const hintFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('Hint schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Hint>} */
 export const hintSchema = hintFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('Hint schema')
 
 /** @type {joi.ObjectSchema} */
 export const labelFormSchema = joi
@@ -98,13 +97,13 @@ export const labelFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('Label schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Label>} */
 export const labelSchema = labelFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('Label schema')
 
 /** @type {joi.ObjectSchema} */
 export const accordionItemHeadingFormSchema = joi
@@ -114,9 +113,8 @@ export const accordionItemHeadingFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('AccordionItemHeading schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<AccordionItemHeading>} */
 export const accordionItemHeadingSchema = accordionItemHeadingFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -126,9 +124,8 @@ export const accordionItemSummaryFormSchema = joi
     text: joi.string().allow('').label('Text'),
     html: joi.string().allow('').label('Html')
   })
-  .description('AccordionItemSummary schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<AccordionItemSummary>} */
 export const accordionItemSummarySchema = accordionItemSummaryFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -139,9 +136,8 @@ export const accordionItemContentFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('AccordionItemContent schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<AccordionItemContent>} */
 export const accordionItemContentSchema = accordionItemContentFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -150,15 +146,15 @@ export const accordionItemFormSchema = joi
   .keys({
     expanded: joi.boolean().label('Expanded')
   })
-  .description('AccordionItem schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<AccordionItem>} */
 export const accordionItemSchema = accordionItemFormSchema
   .append({
     heading: accordionItemHeadingSchema.required().label('Heading'),
     summary: accordionItemSummarySchema.label('Summary'),
     content: accordionItemContentSchema.required().label('Content')
   })
+  .description('AccordionItem schema')
 
 /** @type {joi.ObjectSchema} */
 export const accordionFormSchema = joi
@@ -175,14 +171,14 @@ export const accordionFormSchema = joi
     showSectionText: joi.string().allow('').label('Show section text'),
     showSectionAriaLabelText: joi.string().allow('').label('Show section aria label text')
   })
-  .description('Accordion schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Accordion>} */
 export const accordionSchema = accordionFormSchema
   .append({
     attributes: joi.object().label('Attributes'),
     items: joi.array().items(accordionItemSchema.required().label('Items'))
   })
+  .description('Accordion schema')
 
 /** @type {joi.ObjectSchema} */
 export const backLinkFormSchema = joi
@@ -193,13 +189,13 @@ export const backLinkFormSchema = joi
     href: joi.string().required().label('Href'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('BackLink schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<BackLink>} */
 export const backLinkSchema = backLinkFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('BackLink schema')
 
 /** @type {joi.ObjectSchema} */
 export const breadcrumbsItemFormSchema = joi
@@ -210,13 +206,13 @@ export const breadcrumbsItemFormSchema = joi
     href: joi.string().allow('').label('Href')
   })
   .or('text', 'html')
-  .description('BreadcrumbsItem schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<BreadcrumbsItem>} */
 export const breadcrumbsItemSchema = breadcrumbsItemFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('BreadcrumbsItem schema')
 
 /** @type {joi.ObjectSchema} */
 export const breadcrumbsFormSchema = joi
@@ -226,14 +222,14 @@ export const breadcrumbsFormSchema = joi
     collapseOnMobile: joi.boolean().label('Collapse on mobile'),
     labelText: joi.string().allow('').label('Label text')
   })
-  .description('Breadcrumbs schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Breadcrumbs>} */
 export const breadcrumbsSchema = breadcrumbsFormSchema
   .append({
     items: joi.array().items(breadcrumbsItemSchema.required().label('Items')),
     attributes: joi.object().label('Attributes')
   })
+  .description('Breadcrumbs schema')
 
 /** @type {joi.ObjectSchema} */
 export const buttonFormSchema = joi
@@ -253,13 +249,13 @@ export const buttonFormSchema = joi
     id: joi.string().allow('').label('Id')
   })
   .or('text', 'html')
-  .description('Button schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Button>} */
 export const buttonSchema = buttonFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('Button schema')
 
 /** @type {joi.ObjectSchema} */
 export const characterCountFormGroupBeforeInputFormSchema = joi
@@ -269,9 +265,8 @@ export const characterCountFormGroupBeforeInputFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('CharacterCountFormGroupBeforeInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CharacterCountFormGroupBeforeInput>} */
 export const characterCountFormGroupBeforeInputSchema = characterCountFormGroupBeforeInputFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -282,9 +277,8 @@ export const characterCountFormGroupAfterInputFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('CharacterCountFormGroupAfterInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CharacterCountFormGroupAfterInput>} */
 export const characterCountFormGroupAfterInputSchema = characterCountFormGroupAfterInputFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -293,15 +287,15 @@ export const characterCountFormGroupFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('CharacterCountFormGroup schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CharacterCountFormGroup>} */
 export const characterCountFormGroupSchema = characterCountFormGroupFormSchema
   .append({
     attributes: joi.object().label('Attributes'),
     beforeInput: characterCountFormGroupBeforeInputSchema.label('Before input'),
     afterInput: characterCountFormGroupAfterInputSchema.label('After input')
   })
+  .description('CharacterCountFormGroup schema')
 
 /** @type {joi.ObjectSchema} */
 export const characterCountCountMessageFormSchema = joi
@@ -309,9 +303,8 @@ export const characterCountCountMessageFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('CharacterCountCountMessage schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CharacterCountCountMessage>} */
 export const characterCountCountMessageSchema = characterCountCountMessageFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -332,9 +325,8 @@ export const characterCountFormSchema = joi
     wordsAtLimitText: joi.string().allow('').label('Words at limit text')
   })
   .or('maxlength', 'maxwords')
-  .description('CharacterCount schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CharacterCount>} */
 export const characterCountSchema = characterCountFormSchema
   .append({
     label: labelSchema.required().label('Label'),
@@ -348,6 +340,7 @@ export const characterCountSchema = characterCountFormSchema
     wordsUnderLimitText: joi.object().label('Words under limit text'),
     wordsOverLimitText: joi.object().label('Words over limit text')
   })
+  .description('CharacterCount schema')
 
 /** @type {joi.ObjectSchema} */
 export const checkboxesFormGroupBeforeInputsFormSchema = joi
@@ -357,9 +350,8 @@ export const checkboxesFormGroupBeforeInputsFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('CheckboxesFormGroupBeforeInputs schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CheckboxesFormGroupBeforeInputs>} */
 export const checkboxesFormGroupBeforeInputsSchema = checkboxesFormGroupBeforeInputsFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -370,9 +362,8 @@ export const checkboxesFormGroupAfterInputsFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('CheckboxesFormGroupAfterInputs schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CheckboxesFormGroupAfterInputs>} */
 export const checkboxesFormGroupAfterInputsSchema = checkboxesFormGroupAfterInputsFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -381,15 +372,15 @@ export const checkboxesFormGroupFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('CheckboxesFormGroup schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CheckboxesFormGroup>} */
 export const checkboxesFormGroupSchema = checkboxesFormGroupFormSchema
   .append({
     attributes: joi.object().label('Attributes'),
     beforeInputs: checkboxesFormGroupBeforeInputsSchema.label('Before inputs'),
     afterInputs: checkboxesFormGroupAfterInputsSchema.label('After inputs')
   })
+  .description('CheckboxesFormGroup schema')
 
 /** @type {joi.ObjectSchema} */
 export const checkboxesItemLabelFormSchema = joi
@@ -397,13 +388,13 @@ export const checkboxesItemLabelFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('CheckboxesItemLabel schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CheckboxesItemLabel>} */
 export const checkboxesItemLabelSchema = checkboxesItemLabelFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('CheckboxesItemLabel schema')
 
 /** @type {joi.ObjectSchema} */
 export const checkboxesItemConditionalFormSchema = joi
@@ -411,9 +402,8 @@ export const checkboxesItemConditionalFormSchema = joi
   .keys({
     html: joi.string().required().label('Html')
   })
-  .description('CheckboxesItemConditional schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CheckboxesItemConditional>} */
 export const checkboxesItemConditionalSchema = checkboxesItemConditionalFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -431,9 +421,8 @@ export const checkboxesItemFormSchema = joi
     disabled: joi.boolean().label('Disabled')
   })
   .or('text', 'html')
-  .description('CheckboxesItem schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CheckboxesItem>} */
 export const checkboxesItemSchema = checkboxesItemFormSchema
   .append({
     label: checkboxesItemLabelSchema.label('Label'),
@@ -441,6 +430,7 @@ export const checkboxesItemSchema = checkboxesItemFormSchema
     conditional: checkboxesItemConditionalSchema.label('Conditional'),
     attributes: joi.object().label('Attributes')
   })
+  .description('CheckboxesItem schema')
 
 /** @type {joi.ObjectSchema} */
 export const checkboxesFormSchema = joi
@@ -451,9 +441,8 @@ export const checkboxesFormSchema = joi
     name: joi.string().required().label('Name'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('Checkboxes schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Checkboxes>} */
 export const checkboxesSchema = checkboxesFormSchema
   .append({
     fieldset: fieldsetSchema.label('Fieldset'),
@@ -464,6 +453,7 @@ export const checkboxesSchema = checkboxesFormSchema
     values: joi.array().items(joi.string().label('Values')),
     attributes: joi.object().label('Attributes')
   })
+  .description('Checkboxes schema')
 
 /** @type {joi.ObjectSchema} */
 export const cookieBannerMessageActionFormSchema = joi
@@ -476,13 +466,13 @@ export const cookieBannerMessageActionFormSchema = joi
     value: joi.string().allow('').label('Value'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('CookieBannerMessageAction schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CookieBannerMessageAction>} */
 export const cookieBannerMessageActionSchema = cookieBannerMessageActionFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('CookieBannerMessageAction schema')
 
 /** @type {joi.ObjectSchema} */
 export const cookieBannerMessageFormSchema = joi
@@ -497,14 +487,14 @@ export const cookieBannerMessageFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('CookieBannerMessage schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CookieBannerMessage>} */
 export const cookieBannerMessageSchema = cookieBannerMessageFormSchema
   .append({
     actions: joi.array().items(cookieBannerMessageActionSchema.label('Actions')),
     attributes: joi.object().label('Attributes')
   })
+  .description('CookieBannerMessage schema')
 
 /** @type {joi.ObjectSchema} */
 export const cookieBannerFormSchema = joi
@@ -514,14 +504,14 @@ export const cookieBannerFormSchema = joi
     hidden: joi.boolean().label('Hidden'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('CookieBanner schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<CookieBanner>} */
 export const cookieBannerSchema = cookieBannerFormSchema
   .append({
     attributes: joi.object().label('Attributes'),
     messages: joi.array().items(cookieBannerMessageSchema.required().label('Messages'))
   })
+  .description('CookieBanner schema')
 
 /** @type {joi.ObjectSchema} */
 export const dateInputItemFormSchema = joi
@@ -535,13 +525,13 @@ export const dateInputItemFormSchema = joi
     pattern: joi.string().allow('').label('Pattern'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('DateInputItem schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<DateInputItem>} */
 export const dateInputItemSchema = dateInputItemFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('DateInputItem schema')
 
 /** @type {joi.ObjectSchema} */
 export const dateInputFormGroupBeforeInputsFormSchema = joi
@@ -551,9 +541,8 @@ export const dateInputFormGroupBeforeInputsFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('DateInputFormGroupBeforeInputs schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<DateInputFormGroupBeforeInputs>} */
 export const dateInputFormGroupBeforeInputsSchema = dateInputFormGroupBeforeInputsFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -564,9 +553,8 @@ export const dateInputFormGroupAfterInputsFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('DateInputFormGroupAfterInputs schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<DateInputFormGroupAfterInputs>} */
 export const dateInputFormGroupAfterInputsSchema = dateInputFormGroupAfterInputsFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -575,15 +563,15 @@ export const dateInputFormGroupFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('DateInputFormGroup schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<DateInputFormGroup>} */
 export const dateInputFormGroupSchema = dateInputFormGroupFormSchema
   .append({
     attributes: joi.object().label('Attributes'),
     beforeInputs: dateInputFormGroupBeforeInputsSchema.label('Before inputs'),
     afterInputs: dateInputFormGroupAfterInputsSchema.label('After inputs')
   })
+  .description('DateInputFormGroup schema')
 
 /** @type {joi.ObjectSchema} */
 export const dateInputFormSchema = joi
@@ -593,9 +581,8 @@ export const dateInputFormSchema = joi
     namePrefix: joi.string().allow('').label('Name prefix'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('DateInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<DateInput>} */
 export const dateInputSchema = dateInputFormSchema
   .append({
     items: joi.array().items(dateInputItemSchema.label('Items')),
@@ -605,6 +592,7 @@ export const dateInputSchema = dateInputFormSchema
     fieldset: fieldsetSchema.label('Fieldset'),
     attributes: joi.object().label('Attributes')
   })
+  .description('DateInput schema')
 
 /** @type {joi.ObjectSchema} */
 export const detailsFormSchema = joi
@@ -620,13 +608,13 @@ export const detailsFormSchema = joi
   })
   .or('text', 'html')
   .or('summaryText', 'summaryHtml')
-  .description('Details schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Details>} */
 export const detailsSchema = detailsFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('Details schema')
 
 /** @type {joi.ObjectSchema} */
 export const errorSummaryErrorListFormSchema = joi
@@ -637,13 +625,13 @@ export const errorSummaryErrorListFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('ErrorSummaryErrorList schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<ErrorSummaryErrorList>} */
 export const errorSummaryErrorListSchema = errorSummaryErrorListFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('ErrorSummaryErrorList schema')
 
 /** @type {joi.ObjectSchema} */
 export const errorSummaryFormSchema = joi
@@ -657,14 +645,14 @@ export const errorSummaryFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('titleText', 'titleHtml')
-  .description('ErrorSummary schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<ErrorSummary>} */
 export const errorSummarySchema = errorSummaryFormSchema
   .append({
     errorList: joi.array().items(errorSummaryErrorListSchema.label('Error list')),
     attributes: joi.object().label('Attributes')
   })
+  .description('ErrorSummary schema')
 
 /** @type {joi.ObjectSchema} */
 export const exitThisPageFormSchema = joi
@@ -680,13 +668,13 @@ export const exitThisPageFormSchema = joi
     pressTwoMoreTimesText: joi.string().allow('').label('Press two more times text'),
     pressOneMoreTimeText: joi.string().allow('').label('Press one more time text')
   })
-  .description('ExitThisPage schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<ExitThisPage>} */
 export const exitThisPageSchema = exitThisPageFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('ExitThisPage schema')
 
 /** @type {joi.ObjectSchema} */
 export const fileUploadFormGroupBeforeInputFormSchema = joi
@@ -696,9 +684,8 @@ export const fileUploadFormGroupBeforeInputFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('FileUploadFormGroupBeforeInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<FileUploadFormGroupBeforeInput>} */
 export const fileUploadFormGroupBeforeInputSchema = fileUploadFormGroupBeforeInputFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -709,9 +696,8 @@ export const fileUploadFormGroupAfterInputFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('FileUploadFormGroupAfterInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<FileUploadFormGroupAfterInput>} */
 export const fileUploadFormGroupAfterInputSchema = fileUploadFormGroupAfterInputFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -720,15 +706,15 @@ export const fileUploadFormGroupFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('FileUploadFormGroup schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<FileUploadFormGroup>} */
 export const fileUploadFormGroupSchema = fileUploadFormGroupFormSchema
   .append({
     attributes: joi.object().label('Attributes'),
     beforeInput: fileUploadFormGroupBeforeInputSchema.label('Before input'),
     afterInput: fileUploadFormGroupAfterInputSchema.label('After input')
   })
+  .description('FileUploadFormGroup schema')
 
 /** @type {joi.ObjectSchema} */
 export const fileUploadFormSchema = joi
@@ -741,9 +727,8 @@ export const fileUploadFormSchema = joi
     describedBy: joi.string().allow('').label('Described by'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('FileUpload schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<FileUpload>} */
 export const fileUploadSchema = fileUploadFormSchema
   .append({
     label: labelSchema.required().label('Label'),
@@ -752,6 +737,7 @@ export const fileUploadSchema = fileUploadFormSchema
     formGroup: fileUploadFormGroupSchema.label('Form group'),
     attributes: joi.object().label('Attributes')
   })
+  .description('FileUpload schema')
 
 /** @type {joi.ObjectSchema} */
 export const footerMetaItemFormSchema = joi
@@ -760,13 +746,13 @@ export const footerMetaItemFormSchema = joi
     text: joi.string().required().label('Text'),
     href: joi.string().required().label('Href')
   })
-  .description('FooterMetaItem schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<FooterMetaItem>} */
 export const footerMetaItemSchema = footerMetaItemFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('FooterMetaItem schema')
 
 /** @type {joi.ObjectSchema} */
 export const footerMetaFormSchema = joi
@@ -776,13 +762,13 @@ export const footerMetaFormSchema = joi
     html: joi.string().allow('').label('Html'),
     text: joi.string().allow('').label('Text')
   })
-  .description('FooterMeta schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<FooterMeta>} */
 export const footerMetaSchema = footerMetaFormSchema
   .append({
     items: joi.array().items(footerMetaItemSchema.label('Items'))
   })
+  .description('FooterMeta schema')
 
 /** @type {joi.ObjectSchema} */
 export const footerNavigationItemFormSchema = joi
@@ -791,13 +777,13 @@ export const footerNavigationItemFormSchema = joi
     text: joi.string().required().label('Text'),
     href: joi.string().required().label('Href')
   })
-  .description('FooterNavigationItem schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<FooterNavigationItem>} */
 export const footerNavigationItemSchema = footerNavigationItemFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('FooterNavigationItem schema')
 
 /** @type {joi.ObjectSchema} */
 export const footerNavigationFormSchema = joi
@@ -807,13 +793,13 @@ export const footerNavigationFormSchema = joi
     columns: joi.number().integer().empty('').label('Columns'),
     width: joi.string().allow('').label('Width')
   })
-  .description('FooterNavigation schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<FooterNavigation>} */
 export const footerNavigationSchema = footerNavigationFormSchema
   .append({
     items: joi.array().items(footerNavigationItemSchema.label('Items'))
   })
+  .description('FooterNavigation schema')
 
 /** @type {joi.ObjectSchema} */
 export const footerContentLicenceFormSchema = joi
@@ -822,9 +808,8 @@ export const footerContentLicenceFormSchema = joi
     text: joi.string().allow('').label('Text'),
     html: joi.string().allow('').label('Html')
   })
-  .description('FooterContentLicence schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<FooterContentLicence>} */
 export const footerContentLicenceSchema = footerContentLicenceFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -834,9 +819,8 @@ export const footerCopyrightFormSchema = joi
     text: joi.string().allow('').label('Text'),
     html: joi.string().allow('').label('Html')
   })
-  .description('FooterCopyright schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<FooterCopyright>} */
 export const footerCopyrightSchema = footerCopyrightFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -846,9 +830,8 @@ export const footerFormSchema = joi
     containerClasses: joi.string().allow('').label('Container classes'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('Footer schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Footer>} */
 export const footerSchema = footerFormSchema
   .append({
     meta: footerMetaSchema.label('Meta'),
@@ -857,6 +840,7 @@ export const footerSchema = footerFormSchema
     copyright: footerCopyrightSchema.label('Copyright'),
     attributes: joi.object().label('Attributes')
   })
+  .description('Footer schema')
 
 /** @type {joi.ObjectSchema} */
 export const headerNavigationFormSchema = joi
@@ -868,13 +852,13 @@ export const headerNavigationFormSchema = joi
     active: joi.boolean().label('Active')
   })
   .or('text', 'html')
-  .description('HeaderNavigation schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<HeaderNavigation>} */
 export const headerNavigationSchema = headerNavigationFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('HeaderNavigation schema')
 
 /** @type {joi.ObjectSchema} */
 export const headerFormSchema = joi
@@ -892,14 +876,14 @@ export const headerFormSchema = joi
     classes: joi.string().allow('').label('Classes'),
     useTudorCrown: joi.boolean().label('Use tudor crown')
   })
-  .description('Header schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Header>} */
 export const headerSchema = headerFormSchema
   .append({
     navigation: joi.array().items(headerNavigationSchema.label('Navigation')),
     attributes: joi.object().label('Attributes')
   })
+  .description('Header schema')
 
 /** @type {joi.ObjectSchema} */
 export const inputPrefixFormSchema = joi
@@ -910,13 +894,13 @@ export const inputPrefixFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('InputPrefix schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<InputPrefix>} */
 export const inputPrefixSchema = inputPrefixFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('InputPrefix schema')
 
 /** @type {joi.ObjectSchema} */
 export const inputSuffixFormSchema = joi
@@ -927,13 +911,13 @@ export const inputSuffixFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('InputSuffix schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<InputSuffix>} */
 export const inputSuffixSchema = inputSuffixFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('InputSuffix schema')
 
 /** @type {joi.ObjectSchema} */
 export const inputFormGroupBeforeInputFormSchema = joi
@@ -943,9 +927,8 @@ export const inputFormGroupBeforeInputFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('InputFormGroupBeforeInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<InputFormGroupBeforeInput>} */
 export const inputFormGroupBeforeInputSchema = inputFormGroupBeforeInputFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -956,9 +939,8 @@ export const inputFormGroupAfterInputFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('InputFormGroupAfterInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<InputFormGroupAfterInput>} */
 export const inputFormGroupAfterInputSchema = inputFormGroupAfterInputFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -967,15 +949,15 @@ export const inputFormGroupFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('InputFormGroup schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<InputFormGroup>} */
 export const inputFormGroupSchema = inputFormGroupFormSchema
   .append({
     attributes: joi.object().label('Attributes'),
     beforeInput: inputFormGroupBeforeInputSchema.label('Before input'),
     afterInput: inputFormGroupAfterInputSchema.label('After input')
   })
+  .description('InputFormGroup schema')
 
 /** @type {joi.ObjectSchema} */
 export const inputInputWrapperFormSchema = joi
@@ -983,13 +965,13 @@ export const inputInputWrapperFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('InputInputWrapper schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<InputInputWrapper>} */
 export const inputInputWrapperSchema = inputInputWrapperFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('InputInputWrapper schema')
 
 /** @type {joi.ObjectSchema} */
 export const inputFormSchema = joi
@@ -1008,9 +990,8 @@ export const inputFormSchema = joi
     spellcheck: joi.boolean().label('Spellcheck'),
     autocapitalize: joi.string().allow('').label('Autocapitalize')
   })
-  .description('Input schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Input>} */
 export const inputSchema = inputFormSchema
   .append({
     label: labelSchema.required().label('Label'),
@@ -1022,6 +1003,7 @@ export const inputSchema = inputFormSchema
     inputWrapper: inputInputWrapperSchema.label('Input wrapper'),
     attributes: joi.object().label('Attributes')
   })
+  .description('Input schema')
 
 /** @type {joi.ObjectSchema} */
 export const insetTextFormSchema = joi
@@ -1033,13 +1015,13 @@ export const insetTextFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('InsetText schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<InsetText>} */
 export const insetTextSchema = insetTextFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('InsetText schema')
 
 /** @type {joi.ObjectSchema} */
 export const notificationBannerFormSchema = joi
@@ -1057,13 +1039,13 @@ export const notificationBannerFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('NotificationBanner schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<NotificationBanner>} */
 export const notificationBannerSchema = notificationBannerFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('NotificationBanner schema')
 
 /** @type {joi.ObjectSchema} */
 export const paginationItemFormSchema = joi
@@ -1075,13 +1057,13 @@ export const paginationItemFormSchema = joi
     current: joi.boolean().label('Current'),
     ellipsis: joi.boolean().label('Ellipsis')
   })
-  .description('PaginationItem schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<PaginationItem>} */
 export const paginationItemSchema = paginationItemFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('PaginationItem schema')
 
 /** @type {joi.ObjectSchema} */
 export const paginationPreviousFormSchema = joi
@@ -1092,13 +1074,13 @@ export const paginationPreviousFormSchema = joi
     labelText: joi.string().allow('').label('Label text'),
     href: joi.string().required().label('Href')
   })
-  .description('PaginationPrevious schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<PaginationPrevious>} */
 export const paginationPreviousSchema = paginationPreviousFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('PaginationPrevious schema')
 
 /** @type {joi.ObjectSchema} */
 export const paginationNextFormSchema = joi
@@ -1109,13 +1091,13 @@ export const paginationNextFormSchema = joi
     labelText: joi.string().allow('').label('Label text'),
     href: joi.string().required().label('Href')
   })
-  .description('PaginationNext schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<PaginationNext>} */
 export const paginationNextSchema = paginationNextFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('PaginationNext schema')
 
 /** @type {joi.ObjectSchema} */
 export const paginationFormSchema = joi
@@ -1124,9 +1106,8 @@ export const paginationFormSchema = joi
     landmarkLabel: joi.string().allow('').label('Landmark label'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('Pagination schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Pagination>} */
 export const paginationSchema = paginationFormSchema
   .append({
     items: joi.array().items(paginationItemSchema.label('Items')),
@@ -1134,6 +1115,7 @@ export const paginationSchema = paginationFormSchema
     next: paginationNextSchema.label('Next'),
     attributes: joi.object().label('Attributes')
   })
+  .description('Pagination schema')
 
 /** @type {joi.ObjectSchema} */
 export const panelFormSchema = joi
@@ -1148,13 +1130,13 @@ export const panelFormSchema = joi
   })
   .or('text', 'html')
   .or('titleText', 'titleHtml')
-  .description('Panel schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Panel>} */
 export const panelSchema = panelFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('Panel schema')
 
 /** @type {joi.ObjectSchema} */
 export const passwordInputFormGroupBeforeInputFormSchema = joi
@@ -1164,9 +1146,8 @@ export const passwordInputFormGroupBeforeInputFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('PasswordInputFormGroupBeforeInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<PasswordInputFormGroupBeforeInput>} */
 export const passwordInputFormGroupBeforeInputSchema = passwordInputFormGroupBeforeInputFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1177,9 +1158,8 @@ export const passwordInputFormGroupAfterInputFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('PasswordInputFormGroupAfterInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<PasswordInputFormGroupAfterInput>} */
 export const passwordInputFormGroupAfterInputSchema = passwordInputFormGroupAfterInputFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1188,15 +1168,15 @@ export const passwordInputFormGroupFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('PasswordInputFormGroup schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<PasswordInputFormGroup>} */
 export const passwordInputFormGroupSchema = passwordInputFormGroupFormSchema
   .append({
     attributes: joi.object().label('Attributes'),
     beforeInput: passwordInputFormGroupBeforeInputSchema.label('Before input'),
     afterInput: passwordInputFormGroupAfterInputSchema.label('After input')
   })
+  .description('PasswordInputFormGroup schema')
 
 /** @type {joi.ObjectSchema} */
 export const passwordInputButtonFormSchema = joi
@@ -1204,9 +1184,8 @@ export const passwordInputButtonFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('PasswordInputButton schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<PasswordInputButton>} */
 export const passwordInputButtonSchema = passwordInputButtonFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1227,9 +1206,8 @@ export const passwordInputFormSchema = joi
     passwordShownAnnouncementText: joi.string().allow('').label('Password shown announcement text'),
     passwordHiddenAnnouncementText: joi.string().allow('').label('Password hidden announcement text')
   })
-  .description('PasswordInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<PasswordInput>} */
 export const passwordInputSchema = passwordInputFormSchema
   .append({
     label: labelSchema.required().label('Label'),
@@ -1239,6 +1217,7 @@ export const passwordInputSchema = passwordInputFormSchema
     attributes: joi.object().label('Attributes'),
     button: passwordInputButtonSchema.label('Button')
   })
+  .description('PasswordInput schema')
 
 /** @type {joi.ObjectSchema} */
 export const phaseBannerFormSchema = joi
@@ -1249,14 +1228,14 @@ export const phaseBannerFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('PhaseBanner schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<PhaseBanner>} */
 export const phaseBannerSchema = phaseBannerFormSchema
   .append({
     tag: tagSchema.required().label('Tag'),
     attributes: joi.object().label('Attributes')
   })
+  .description('PhaseBanner schema')
 
 /** @type {joi.ObjectSchema} */
 export const radiosFormGroupBeforeInputsFormSchema = joi
@@ -1266,9 +1245,8 @@ export const radiosFormGroupBeforeInputsFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('RadiosFormGroupBeforeInputs schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<RadiosFormGroupBeforeInputs>} */
 export const radiosFormGroupBeforeInputsSchema = radiosFormGroupBeforeInputsFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1279,9 +1257,8 @@ export const radiosFormGroupAfterInputsFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('RadiosFormGroupAfterInputs schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<RadiosFormGroupAfterInputs>} */
 export const radiosFormGroupAfterInputsSchema = radiosFormGroupAfterInputsFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1290,15 +1267,15 @@ export const radiosFormGroupFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('RadiosFormGroup schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<RadiosFormGroup>} */
 export const radiosFormGroupSchema = radiosFormGroupFormSchema
   .append({
     attributes: joi.object().label('Attributes'),
     beforeInputs: radiosFormGroupBeforeInputsSchema.label('Before inputs'),
     afterInputs: radiosFormGroupAfterInputsSchema.label('After inputs')
   })
+  .description('RadiosFormGroup schema')
 
 /** @type {joi.ObjectSchema} */
 export const radiosItemLabelFormSchema = joi
@@ -1306,13 +1283,13 @@ export const radiosItemLabelFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('RadiosItemLabel schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<RadiosItemLabel>} */
 export const radiosItemLabelSchema = radiosItemLabelFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('RadiosItemLabel schema')
 
 /** @type {joi.ObjectSchema} */
 export const radiosItemConditionalFormSchema = joi
@@ -1320,9 +1297,8 @@ export const radiosItemConditionalFormSchema = joi
   .keys({
     html: joi.string().required().label('Html')
   })
-  .description('RadiosItemConditional schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<RadiosItemConditional>} */
 export const radiosItemConditionalSchema = radiosItemConditionalFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1338,9 +1314,8 @@ export const radiosItemFormSchema = joi
     disabled: joi.boolean().label('Disabled')
   })
   .or('text', 'html')
-  .description('RadiosItem schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<RadiosItem>} */
 export const radiosItemSchema = radiosItemFormSchema
   .append({
     label: radiosItemLabelSchema.label('Label'),
@@ -1348,6 +1323,7 @@ export const radiosItemSchema = radiosItemFormSchema
     conditional: radiosItemConditionalSchema.label('Conditional'),
     attributes: joi.object().label('Attributes')
   })
+  .description('RadiosItem schema')
 
 /** @type {joi.ObjectSchema} */
 export const radiosFormSchema = joi
@@ -1358,9 +1334,8 @@ export const radiosFormSchema = joi
     value: joi.string().allow('').label('Value'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('Radios schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Radios>} */
 export const radiosSchema = radiosFormSchema
   .append({
     fieldset: fieldsetSchema.label('Fieldset'),
@@ -1370,6 +1345,7 @@ export const radiosSchema = radiosFormSchema
     items: joi.array().items(radiosItemSchema.required().label('Items')),
     attributes: joi.object().label('Attributes')
   })
+  .description('Radios schema')
 
 /** @type {joi.ObjectSchema} */
 export const selectItemFormSchema = joi
@@ -1380,13 +1356,13 @@ export const selectItemFormSchema = joi
     selected: joi.boolean().label('Selected'),
     disabled: joi.boolean().label('Disabled')
   })
-  .description('SelectItem schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SelectItem>} */
 export const selectItemSchema = selectItemFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('SelectItem schema')
 
 /** @type {joi.ObjectSchema} */
 export const selectFormGroupBeforeInputFormSchema = joi
@@ -1396,9 +1372,8 @@ export const selectFormGroupBeforeInputFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('SelectFormGroupBeforeInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SelectFormGroupBeforeInput>} */
 export const selectFormGroupBeforeInputSchema = selectFormGroupBeforeInputFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1409,9 +1384,8 @@ export const selectFormGroupAfterInputFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('SelectFormGroupAfterInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SelectFormGroupAfterInput>} */
 export const selectFormGroupAfterInputSchema = selectFormGroupAfterInputFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1420,15 +1394,15 @@ export const selectFormGroupFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('SelectFormGroup schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SelectFormGroup>} */
 export const selectFormGroupSchema = selectFormGroupFormSchema
   .append({
     attributes: joi.object().label('Attributes'),
     beforeInput: selectFormGroupBeforeInputSchema.label('Before input'),
     afterInput: selectFormGroupAfterInputSchema.label('After input')
   })
+  .description('SelectFormGroup schema')
 
 /** @type {joi.ObjectSchema} */
 export const selectFormSchema = joi
@@ -1441,9 +1415,8 @@ export const selectFormSchema = joi
     describedBy: joi.string().allow('').label('Described by'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('Select schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Select>} */
 export const selectSchema = selectFormSchema
   .append({
     items: joi.array().items(selectItemSchema.required().label('Items')),
@@ -1453,6 +1426,7 @@ export const selectSchema = selectFormSchema
     formGroup: selectFormGroupSchema.label('Form group'),
     attributes: joi.object().label('Attributes')
   })
+  .description('Select schema')
 
 /** @type {joi.ObjectSchema} */
 export const serviceNavigationNavigationFormSchema = joi
@@ -1465,13 +1439,13 @@ export const serviceNavigationNavigationFormSchema = joi
     href: joi.string().allow('').label('Href')
   })
   .or('text', 'html')
-  .description('ServiceNavigationNavigation schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<ServiceNavigationNavigation>} */
 export const serviceNavigationNavigationSchema = serviceNavigationNavigationFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('ServiceNavigationNavigation schema')
 
 /** @type {joi.ObjectSchema} */
 export const serviceNavigationSlotsFormSchema = joi
@@ -1482,9 +1456,8 @@ export const serviceNavigationSlotsFormSchema = joi
     navigationStart: joi.string().allow('').label('Navigation start'),
     navigationEnd: joi.string().allow('').label('Navigation end')
   })
-  .description('ServiceNavigationSlots schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<ServiceNavigationSlots>} */
 export const serviceNavigationSlotsSchema = serviceNavigationSlotsFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1501,15 +1474,15 @@ export const serviceNavigationFormSchema = joi
     serviceName: joi.string().allow('').label('Service name'),
     serviceUrl: joi.string().allow('').label('Service url')
   })
-  .description('ServiceNavigation schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<ServiceNavigation>} */
 export const serviceNavigationSchema = serviceNavigationFormSchema
   .append({
     attributes: joi.object().label('Attributes'),
     navigation: joi.array().items(serviceNavigationNavigationSchema.required().label('Navigation')),
     slots: serviceNavigationSlotsSchema.label('Slots')
   })
+  .description('ServiceNavigation schema')
 
 /** @type {joi.ObjectSchema} */
 export const skipLinkFormSchema = joi
@@ -1521,13 +1494,13 @@ export const skipLinkFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('SkipLink schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SkipLink>} */
 export const skipLinkSchema = skipLinkFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('SkipLink schema')
 
 /** @type {joi.ObjectSchema} */
 export const summaryListRowKeyFormSchema = joi
@@ -1538,9 +1511,8 @@ export const summaryListRowKeyFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('SummaryListRowKey schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SummaryListRowKey>} */
 export const summaryListRowKeySchema = summaryListRowKeyFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1552,9 +1524,8 @@ export const summaryListRowValueFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('SummaryListRowValue schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SummaryListRowValue>} */
 export const summaryListRowValueSchema = summaryListRowValueFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1568,13 +1539,13 @@ export const summaryListRowActionsItemFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('SummaryListRowActionsItem schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SummaryListRowActionsItem>} */
 export const summaryListRowActionsItemSchema = summaryListRowActionsItemFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('SummaryListRowActionsItem schema')
 
 /** @type {joi.ObjectSchema} */
 export const summaryListRowActionsFormSchema = joi
@@ -1582,13 +1553,13 @@ export const summaryListRowActionsFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('SummaryListRowActions schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SummaryListRowActions>} */
 export const summaryListRowActionsSchema = summaryListRowActionsFormSchema
   .append({
     items: joi.array().items(summaryListRowActionsItemSchema.label('Items'))
   })
+  .description('SummaryListRowActions schema')
 
 /** @type {joi.ObjectSchema} */
 export const summaryListRowFormSchema = joi
@@ -1596,15 +1567,15 @@ export const summaryListRowFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('SummaryListRow schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SummaryListRow>} */
 export const summaryListRowSchema = summaryListRowFormSchema
   .append({
     key: summaryListRowKeySchema.required().label('Key'),
     value: summaryListRowValueSchema.required().label('Value'),
     actions: summaryListRowActionsSchema.label('Actions')
   })
+  .description('SummaryListRow schema')
 
 /** @type {joi.ObjectSchema} */
 export const summaryListCardTitleFormSchema = joi
@@ -1615,9 +1586,8 @@ export const summaryListCardTitleFormSchema = joi
     headingLevel: joi.number().integer().empty('').label('Heading level'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('SummaryListCardTitle schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SummaryListCardTitle>} */
 export const summaryListCardTitleSchema = summaryListCardTitleFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1631,13 +1601,13 @@ export const summaryListCardActionsItemFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('SummaryListCardActionsItem schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SummaryListCardActionsItem>} */
 export const summaryListCardActionsItemSchema = summaryListCardActionsItemFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('SummaryListCardActionsItem schema')
 
 /** @type {joi.ObjectSchema} */
 export const summaryListCardActionsFormSchema = joi
@@ -1645,13 +1615,13 @@ export const summaryListCardActionsFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('SummaryListCardActions schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SummaryListCardActions>} */
 export const summaryListCardActionsSchema = summaryListCardActionsFormSchema
   .append({
     items: joi.array().items(summaryListCardActionsItemSchema.label('Items'))
   })
+  .description('SummaryListCardActions schema')
 
 /** @type {joi.ObjectSchema} */
 export const summaryListCardFormSchema = joi
@@ -1659,15 +1629,15 @@ export const summaryListCardFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('SummaryListCard schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SummaryListCard>} */
 export const summaryListCardSchema = summaryListCardFormSchema
   .append({
     title: summaryListCardTitleSchema.label('Title'),
     actions: summaryListCardActionsSchema.label('Actions'),
     attributes: joi.object().label('Attributes')
   })
+  .description('SummaryListCard schema')
 
 /** @type {joi.ObjectSchema} */
 export const summaryListFormSchema = joi
@@ -1675,15 +1645,15 @@ export const summaryListFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('SummaryList schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<SummaryList>} */
 export const summaryListSchema = summaryListFormSchema
   .append({
     rows: joi.array().items(summaryListRowSchema.required().label('Rows')),
     card: summaryListCardSchema.label('Card'),
     attributes: joi.object().label('Attributes')
   })
+  .description('SummaryList schema')
 
 /** @type {joi.ObjectSchema} */
 export const tableRowFormSchema = joi
@@ -1697,13 +1667,13 @@ export const tableRowFormSchema = joi
     rowspan: joi.number().integer().empty('').label('Rowspan')
   })
   .or('text', 'html')
-  .description('TableRow schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<TableRow>} */
 export const tableRowSchema = tableRowFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('TableRow schema')
 
 /** @type {joi.ObjectSchema} */
 export const tableHeadFormSchema = joi
@@ -1716,13 +1686,13 @@ export const tableHeadFormSchema = joi
     colspan: joi.number().integer().empty('').label('Colspan'),
     rowspan: joi.number().integer().empty('').label('Rowspan')
   })
-  .description('TableHead schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<TableHead>} */
 export const tableHeadSchema = tableHeadFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('TableHead schema')
 
 /** @type {joi.ObjectSchema} */
 export const tableFormSchema = joi
@@ -1733,15 +1703,15 @@ export const tableFormSchema = joi
     firstCellIsHeader: joi.boolean().label('First cell is header'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('Table schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Table>} */
 export const tableSchema = tableFormSchema
   .append({
     rows: joi.array().items(tableRowSchema.required().label('Rows')),
     head: joi.array().items(tableHeadSchema.label('Head')),
     attributes: joi.object().label('Attributes')
   })
+  .description('Table schema')
 
 /** @type {joi.ObjectSchema} */
 export const tabsItemPanelFormSchema = joi
@@ -1751,13 +1721,13 @@ export const tabsItemPanelFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('TabsItemPanel schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<TabsItemPanel>} */
 export const tabsItemPanelSchema = tabsItemPanelFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('TabsItemPanel schema')
 
 /** @type {joi.ObjectSchema} */
 export const tabsItemFormSchema = joi
@@ -1766,14 +1736,14 @@ export const tabsItemFormSchema = joi
     id: joi.string().required().label('Id'),
     label: joi.string().required().label('Label')
   })
-  .description('TabsItem schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<TabsItem>} */
 export const tabsItemSchema = tabsItemFormSchema
   .append({
     attributes: joi.object().label('Attributes'),
     panel: tabsItemPanelSchema.required().label('Panel')
   })
+  .description('TabsItem schema')
 
 /** @type {joi.ObjectSchema} */
 export const tabsFormSchema = joi
@@ -1784,14 +1754,14 @@ export const tabsFormSchema = joi
     title: joi.string().allow('').label('Title'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('Tabs schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Tabs>} */
 export const tabsSchema = tabsFormSchema
   .append({
     items: joi.array().items(tabsItemSchema.required().label('Items')),
     attributes: joi.object().label('Attributes')
   })
+  .description('Tabs schema')
 
 /** @type {joi.ObjectSchema} */
 export const taskListItemTitleFormSchema = joi
@@ -1802,9 +1772,8 @@ export const taskListItemTitleFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('TaskListItemTitle schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<TaskListItemTitle>} */
 export const taskListItemTitleSchema = taskListItemTitleFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1815,9 +1784,8 @@ export const taskListItemHintFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('TaskListItemHint schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<TaskListItemHint>} */
 export const taskListItemHintSchema = taskListItemHintFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1828,13 +1796,13 @@ export const taskListItemStatusFormSchema = joi
     html: joi.string().allow('').label('Html'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('TaskListItemStatus schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<TaskListItemStatus>} */
 export const taskListItemStatusSchema = taskListItemStatusFormSchema
   .append({
     tag: tagSchema.label('Tag')
   })
+  .description('TaskListItemStatus schema')
 
 /** @type {joi.ObjectSchema} */
 export const taskListItemFormSchema = joi
@@ -1843,15 +1811,15 @@ export const taskListItemFormSchema = joi
     href: joi.string().allow('').label('Href'),
     classes: joi.string().allow('').label('Classes')
   })
-  .description('TaskListItem schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<TaskListItem>} */
 export const taskListItemSchema = taskListItemFormSchema
   .append({
     title: taskListItemTitleSchema.required().label('Title'),
     hint: taskListItemHintSchema.label('Hint'),
     status: taskListItemStatusSchema.required().label('Status')
   })
+  .description('TaskListItem schema')
 
 /** @type {joi.ObjectSchema} */
 export const taskListFormSchema = joi
@@ -1860,14 +1828,14 @@ export const taskListFormSchema = joi
     classes: joi.string().allow('').label('Classes'),
     idPrefix: joi.string().allow('').label('Id prefix')
   })
-  .description('TaskList schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<TaskList>} */
 export const taskListSchema = taskListFormSchema
   .append({
     items: joi.array().items(taskListItemSchema.required().label('Items')),
     attributes: joi.object().label('Attributes')
   })
+  .description('TaskList schema')
 
 /** @type {joi.ObjectSchema} */
 export const textareaFormGroupBeforeInputFormSchema = joi
@@ -1877,9 +1845,8 @@ export const textareaFormGroupBeforeInputFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('TextareaFormGroupBeforeInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<TextareaFormGroupBeforeInput>} */
 export const textareaFormGroupBeforeInputSchema = textareaFormGroupBeforeInputFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1890,9 +1857,8 @@ export const textareaFormGroupAfterInputFormSchema = joi
     html: joi.string().allow('').label('Html')
   })
   .or('text', 'html')
-  .description('TextareaFormGroupAfterInput schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<TextareaFormGroupAfterInput>} */
 export const textareaFormGroupAfterInputSchema = textareaFormGroupAfterInputFormSchema
 
 /** @type {joi.ObjectSchema} */
@@ -1901,15 +1867,15 @@ export const textareaFormGroupFormSchema = joi
   .keys({
     classes: joi.string().allow('').label('Classes')
   })
-  .description('TextareaFormGroup schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<TextareaFormGroup>} */
 export const textareaFormGroupSchema = textareaFormGroupFormSchema
   .append({
     attributes: joi.object().label('Attributes'),
     beforeInput: textareaFormGroupBeforeInputSchema.label('Before input'),
     afterInput: textareaFormGroupAfterInputSchema.label('After input')
   })
+  .description('TextareaFormGroup schema')
 
 /** @type {joi.ObjectSchema} */
 export const textareaFormSchema = joi
@@ -1925,9 +1891,8 @@ export const textareaFormSchema = joi
     classes: joi.string().allow('').label('Classes'),
     autocomplete: joi.string().allow('').label('Autocomplete')
   })
-  .description('Textarea schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<Textarea>} */
 export const textareaSchema = textareaFormSchema
   .append({
     label: labelSchema.required().label('Label'),
@@ -1936,6 +1901,7 @@ export const textareaSchema = textareaFormSchema
     formGroup: textareaFormGroupSchema.label('Form group'),
     attributes: joi.object().label('Attributes')
   })
+  .description('Textarea schema')
 
 /** @type {joi.ObjectSchema} */
 export const warningTextFormSchema = joi
@@ -1947,10 +1913,18 @@ export const warningTextFormSchema = joi
     classes: joi.string().allow('').label('Classes')
   })
   .or('text', 'html')
-  .description('WarningText schema')
 
-/** @type {joi.ObjectSchema} */
+/** @type {joi.ObjectSchema<WarningText>} */
 export const warningTextSchema = warningTextFormSchema
   .append({
     attributes: joi.object().label('Attributes')
   })
+  .description('WarningText schema')
+
+export const componentIdSchema = /** @type {joi.StringSchema<ComponentId>} */ (joi.string().valid('accordion', 'back-link', 'breadcrumbs', 'button', 'character-count', 'checkboxes', 'cookie-banner', 'date-input', 'details', 'error-message', 'error-summary', 'exit-this-page', 'fieldset', 'file-upload', 'footer', 'header', 'hint', 'input', 'inset-text', 'label', 'notification-banner', 'pagination', 'panel', 'password-input', 'phase-banner', 'radios', 'select', 'service-navigation', 'skip-link', 'summary-list', 'table', 'tabs', 'tag', 'task-list', 'textarea', 'warning-text'))
+
+
+/**
+ * @import { ComponentId } from './enum.js'
+ * @import { AccordionItemHeading, AccordionItemSummary, AccordionItemContent, AccordionItem, Accordion, BackLink, BreadcrumbsItem, Breadcrumbs, Button, CharacterCountFormGroupBeforeInput, CharacterCountFormGroupAfterInput, CharacterCountFormGroup, CharacterCountCountMessage, CharacterCount, CheckboxesFormGroupBeforeInputs, CheckboxesFormGroupAfterInputs, CheckboxesFormGroup, CheckboxesItemLabel, CheckboxesItemConditional, CheckboxesItem, Checkboxes, CookieBannerMessageAction, CookieBannerMessage, CookieBanner, DateInputItem, DateInputFormGroupBeforeInputs, DateInputFormGroupAfterInputs, DateInputFormGroup, DateInput, Details, ErrorMessage, ErrorSummaryErrorList, ErrorSummary, ExitThisPage, FieldsetLegend, Fieldset, FileUploadFormGroupBeforeInput, FileUploadFormGroupAfterInput, FileUploadFormGroup, FileUpload, FooterMetaItem, FooterMeta, FooterNavigationItem, FooterNavigation, FooterContentLicence, FooterCopyright, Footer, HeaderNavigation, Header, Hint, InputPrefix, InputSuffix, InputFormGroupBeforeInput, InputFormGroupAfterInput, InputFormGroup, InputInputWrapper, Input, InsetText, Label, NotificationBanner, PaginationItem, PaginationPrevious, PaginationNext, Pagination, Panel, PasswordInputFormGroupBeforeInput, PasswordInputFormGroupAfterInput, PasswordInputFormGroup, PasswordInputButton, PasswordInput, PhaseBanner, RadiosFormGroupBeforeInputs, RadiosFormGroupAfterInputs, RadiosFormGroup, RadiosItemLabel, RadiosItemConditional, RadiosItem, Radios, SelectItem, SelectFormGroupBeforeInput, SelectFormGroupAfterInput, SelectFormGroup, Select, ServiceNavigationNavigation, ServiceNavigationSlots, ServiceNavigation, SkipLink, SummaryListRowKey, SummaryListRowValue, SummaryListRowActionsItem, SummaryListRowActions, SummaryListRow, SummaryListCardTitle, SummaryListCardActionsItem, SummaryListCardActions, SummaryListCard, SummaryList, TableRow, TableHead, Table, TabsItemPanel, TabsItem, Tabs, Tag, TaskListItemTitle, TaskListItemHint, TaskListItemStatus, TaskListItem, TaskList, TextareaFormGroupBeforeInput, TextareaFormGroupAfterInput, TextareaFormGroup, Textarea, WarningText } from './types.js'
+ */
