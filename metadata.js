@@ -1,4 +1,7 @@
-/** Tag metadata */
+/**
+  * Tag metadata
+  * @type {Metadata}
+  */
 export const tag = {
   name: 'Tag',
   variableName: 'tag',
@@ -21,7 +24,10 @@ export const tag = {
   }
 }
 
-/** FieldsetLegend metadata */
+/**
+  * FieldsetLegend metadata
+  * @type {Metadata}
+  */
 export const fieldsetLegend = {
   name: 'FieldsetLegend',
   variableName: 'fieldsetLegend',
@@ -38,7 +44,10 @@ export const fieldsetLegend = {
   ]
 }
 
-/** Fieldset metadata */
+/**
+  * Fieldset metadata
+  * @type {Metadata}
+  */
 export const fieldset = {
   name: 'Fieldset',
   variableName: 'fieldset',
@@ -63,7 +72,10 @@ export const fieldset = {
   }
 }
 
-/** ErrorMessage metadata */
+/**
+  * ErrorMessage metadata
+  * @type {Metadata}
+  */
 export const errorMessage = {
   name: 'ErrorMessage',
   variableName: 'errorMessage',
@@ -88,7 +100,10 @@ export const errorMessage = {
   }
 }
 
-/** Hint metadata */
+/**
+  * Hint metadata
+  * @type {Metadata}
+  */
 export const hint = {
   name: 'Hint',
   variableName: 'hint',
@@ -112,7 +127,10 @@ export const hint = {
   }
 }
 
-/** Label metadata */
+/**
+  * Label metadata
+  * @type {Metadata}
+  */
 export const label = {
   name: 'Label',
   variableName: 'label',
@@ -137,7 +155,10 @@ export const label = {
   }
 }
 
-/** AccordionItemHeading metadata */
+/**
+  * AccordionItemHeading metadata
+  * @type {Metadata}
+  */
 export const accordionItemHeading = {
   name: 'AccordionItemHeading',
   variableName: 'accordionItemHeading',
@@ -152,7 +173,10 @@ export const accordionItemHeading = {
   ]
 }
 
-/** AccordionItemSummary metadata */
+/**
+  * AccordionItemSummary metadata
+  * @type {Metadata}
+  */
 export const accordionItemSummary = {
   name: 'AccordionItemSummary',
   variableName: 'accordionItemSummary',
@@ -167,7 +191,10 @@ export const accordionItemSummary = {
   ]
 }
 
-/** AccordionItemContent metadata */
+/**
+  * AccordionItemContent metadata
+  * @type {Metadata}
+  */
 export const accordionItemContent = {
   name: 'AccordionItemContent',
   variableName: 'accordionItemContent',
@@ -182,7 +209,10 @@ export const accordionItemContent = {
   ]
 }
 
-/** AccordionItem metadata */
+/**
+  * AccordionItem metadata
+  * @type {Metadata}
+  */
 export const accordionItem = {
   name: 'AccordionItem',
   variableName: 'accordionItem',
@@ -199,7 +229,10 @@ export const accordionItem = {
   ]
 }
 
-/** Accordion metadata */
+/**
+  * Accordion metadata
+  * @type {Metadata}
+  */
 export const accordion = {
   name: 'Accordion',
   variableName: 'accordion',
@@ -230,7 +263,10 @@ export const accordion = {
   }
 }
 
-/** BackLink metadata */
+/**
+  * BackLink metadata
+  * @type {Metadata}
+  */
 export const backLink = {
   name: 'BackLink',
   variableName: 'backLink',
@@ -254,7 +290,10 @@ export const backLink = {
   }
 }
 
-/** BreadcrumbsItem metadata */
+/**
+  * BreadcrumbsItem metadata
+  * @type {Metadata}
+  */
 export const breadcrumbsItem = {
   name: 'BreadcrumbsItem',
   variableName: 'breadcrumbsItem',
@@ -271,7 +310,10 @@ export const breadcrumbsItem = {
   ]
 }
 
-/** Breadcrumbs metadata */
+/**
+  * Breadcrumbs metadata
+  * @type {Metadata}
+  */
 export const breadcrumbs = {
   name: 'Breadcrumbs',
   variableName: 'breadcrumbs',
@@ -295,7 +337,10 @@ export const breadcrumbs = {
   }
 }
 
-/** Button metadata */
+/**
+  * Button metadata
+  * @type {Metadata}
+  */
 export const button = {
   name: 'Button',
   variableName: 'button',
@@ -327,7 +372,10 @@ export const button = {
   }
 }
 
-/** CharacterCountFormGroupBeforeInput metadata */
+/**
+  * CharacterCountFormGroupBeforeInput metadata
+  * @type {Metadata}
+  */
 export const characterCountFormGroupBeforeInput = {
   name: 'CharacterCountFormGroupBeforeInput',
   variableName: 'characterCountFormGroupBeforeInput',
@@ -342,7 +390,10 @@ export const characterCountFormGroupBeforeInput = {
   ]
 }
 
-/** CharacterCountFormGroupAfterInput metadata */
+/**
+  * CharacterCountFormGroupAfterInput metadata
+  * @type {Metadata}
+  */
 export const characterCountFormGroupAfterInput = {
   name: 'CharacterCountFormGroupAfterInput',
   variableName: 'characterCountFormGroupAfterInput',
@@ -357,7 +408,10 @@ export const characterCountFormGroupAfterInput = {
   ]
 }
 
-/** CharacterCountFormGroup metadata */
+/**
+  * CharacterCountFormGroup metadata
+  * @type {Metadata}
+  */
 export const characterCountFormGroup = {
   name: 'CharacterCountFormGroup',
   variableName: 'characterCountFormGroup',
@@ -374,7 +428,10 @@ export const characterCountFormGroup = {
   ]
 }
 
-/** CharacterCountCountMessage metadata */
+/**
+  * CharacterCountCountMessage metadata
+  * @type {Metadata}
+  */
 export const characterCountCountMessage = {
   name: 'CharacterCountCountMessage',
   variableName: 'characterCountCountMessage',
@@ -388,7 +445,10 @@ export const characterCountCountMessage = {
   ]
 }
 
-/** CharacterCount metadata */
+/**
+  * CharacterCount metadata
+  * @type {Metadata}
+  */
 export const characterCount = {
   name: 'CharacterCount',
   variableName: 'characterCount',
@@ -429,7 +489,10 @@ export const characterCount = {
   }
 }
 
-/** CheckboxesFormGroupBeforeInputs metadata */
+/**
+  * CheckboxesFormGroupBeforeInputs metadata
+  * @type {Metadata}
+  */
 export const checkboxesFormGroupBeforeInputs = {
   name: 'CheckboxesFormGroupBeforeInputs',
   variableName: 'checkboxesFormGroupBeforeInputs',
@@ -444,7 +507,10 @@ export const checkboxesFormGroupBeforeInputs = {
   ]
 }
 
-/** CheckboxesFormGroupAfterInputs metadata */
+/**
+  * CheckboxesFormGroupAfterInputs metadata
+  * @type {Metadata}
+  */
 export const checkboxesFormGroupAfterInputs = {
   name: 'CheckboxesFormGroupAfterInputs',
   variableName: 'checkboxesFormGroupAfterInputs',
@@ -459,7 +525,10 @@ export const checkboxesFormGroupAfterInputs = {
   ]
 }
 
-/** CheckboxesFormGroup metadata */
+/**
+  * CheckboxesFormGroup metadata
+  * @type {Metadata}
+  */
 export const checkboxesFormGroup = {
   name: 'CheckboxesFormGroup',
   variableName: 'checkboxesFormGroup',
@@ -476,7 +545,10 @@ export const checkboxesFormGroup = {
   ]
 }
 
-/** CheckboxesItemLabel metadata */
+/**
+  * CheckboxesItemLabel metadata
+  * @type {Metadata}
+  */
 export const checkboxesItemLabel = {
   name: 'CheckboxesItemLabel',
   variableName: 'checkboxesItemLabel',
@@ -491,7 +563,10 @@ export const checkboxesItemLabel = {
   ]
 }
 
-/** CheckboxesItemConditional metadata */
+/**
+  * CheckboxesItemConditional metadata
+  * @type {Metadata}
+  */
 export const checkboxesItemConditional = {
   name: 'CheckboxesItemConditional',
   variableName: 'checkboxesItemConditional',
@@ -505,7 +580,10 @@ export const checkboxesItemConditional = {
   ]
 }
 
-/** CheckboxesItem metadata */
+/**
+  * CheckboxesItem metadata
+  * @type {Metadata}
+  */
 export const checkboxesItem = {
   name: 'CheckboxesItem',
   variableName: 'checkboxesItem',
@@ -531,7 +609,10 @@ export const checkboxesItem = {
   ]
 }
 
-/** Checkboxes metadata */
+/**
+  * Checkboxes metadata
+  * @type {Metadata}
+  */
 export const checkboxes = {
   name: 'Checkboxes',
   variableName: 'checkboxes',
@@ -561,7 +642,10 @@ export const checkboxes = {
   }
 }
 
-/** CookieBannerMessageAction metadata */
+/**
+  * CookieBannerMessageAction metadata
+  * @type {Metadata}
+  */
 export const cookieBannerMessageAction = {
   name: 'CookieBannerMessageAction',
   variableName: 'cookieBannerMessageAction',
@@ -581,7 +665,10 @@ export const cookieBannerMessageAction = {
   ]
 }
 
-/** CookieBannerMessage metadata */
+/**
+  * CookieBannerMessage metadata
+  * @type {Metadata}
+  */
 export const cookieBannerMessage = {
   name: 'CookieBannerMessage',
   variableName: 'cookieBannerMessage',
@@ -603,7 +690,10 @@ export const cookieBannerMessage = {
   ]
 }
 
-/** CookieBanner metadata */
+/**
+  * CookieBanner metadata
+  * @type {Metadata}
+  */
 export const cookieBanner = {
   name: 'CookieBanner',
   variableName: 'cookieBanner',
@@ -627,7 +717,10 @@ export const cookieBanner = {
   }
 }
 
-/** DateInputItem metadata */
+/**
+  * DateInputItem metadata
+  * @type {Metadata}
+  */
 export const dateInputItem = {
   name: 'DateInputItem',
   variableName: 'dateInputItem',
@@ -648,7 +741,10 @@ export const dateInputItem = {
   ]
 }
 
-/** DateInputFormGroupBeforeInputs metadata */
+/**
+  * DateInputFormGroupBeforeInputs metadata
+  * @type {Metadata}
+  */
 export const dateInputFormGroupBeforeInputs = {
   name: 'DateInputFormGroupBeforeInputs',
   variableName: 'dateInputFormGroupBeforeInputs',
@@ -663,7 +759,10 @@ export const dateInputFormGroupBeforeInputs = {
   ]
 }
 
-/** DateInputFormGroupAfterInputs metadata */
+/**
+  * DateInputFormGroupAfterInputs metadata
+  * @type {Metadata}
+  */
 export const dateInputFormGroupAfterInputs = {
   name: 'DateInputFormGroupAfterInputs',
   variableName: 'dateInputFormGroupAfterInputs',
@@ -678,7 +777,10 @@ export const dateInputFormGroupAfterInputs = {
   ]
 }
 
-/** DateInputFormGroup metadata */
+/**
+  * DateInputFormGroup metadata
+  * @type {Metadata}
+  */
 export const dateInputFormGroup = {
   name: 'DateInputFormGroup',
   variableName: 'dateInputFormGroup',
@@ -695,7 +797,10 @@ export const dateInputFormGroup = {
   ]
 }
 
-/** DateInput metadata */
+/**
+  * DateInput metadata
+  * @type {Metadata}
+  */
 export const dateInput = {
   name: 'DateInput',
   variableName: 'dateInput',
@@ -723,7 +828,10 @@ export const dateInput = {
   }
 }
 
-/** Details metadata */
+/**
+  * Details metadata
+  * @type {Metadata}
+  */
 export const details = {
   name: 'Details',
   variableName: 'details',
@@ -750,7 +858,10 @@ export const details = {
   }
 }
 
-/** ErrorSummaryErrorList metadata */
+/**
+  * ErrorSummaryErrorList metadata
+  * @type {Metadata}
+  */
 export const errorSummaryErrorList = {
   name: 'ErrorSummaryErrorList',
   variableName: 'errorSummaryErrorList',
@@ -767,7 +878,10 @@ export const errorSummaryErrorList = {
   ]
 }
 
-/** ErrorSummary metadata */
+/**
+  * ErrorSummary metadata
+  * @type {Metadata}
+  */
 export const errorSummary = {
   name: 'ErrorSummary',
   variableName: 'errorSummary',
@@ -794,7 +908,10 @@ export const errorSummary = {
   }
 }
 
-/** ExitThisPage metadata */
+/**
+  * ExitThisPage metadata
+  * @type {Metadata}
+  */
 export const exitThisPage = {
   name: 'ExitThisPage',
   variableName: 'exitThisPage',
@@ -823,7 +940,10 @@ export const exitThisPage = {
   }
 }
 
-/** FileUploadFormGroupBeforeInput metadata */
+/**
+  * FileUploadFormGroupBeforeInput metadata
+  * @type {Metadata}
+  */
 export const fileUploadFormGroupBeforeInput = {
   name: 'FileUploadFormGroupBeforeInput',
   variableName: 'fileUploadFormGroupBeforeInput',
@@ -838,7 +958,10 @@ export const fileUploadFormGroupBeforeInput = {
   ]
 }
 
-/** FileUploadFormGroupAfterInput metadata */
+/**
+  * FileUploadFormGroupAfterInput metadata
+  * @type {Metadata}
+  */
 export const fileUploadFormGroupAfterInput = {
   name: 'FileUploadFormGroupAfterInput',
   variableName: 'fileUploadFormGroupAfterInput',
@@ -853,7 +976,10 @@ export const fileUploadFormGroupAfterInput = {
   ]
 }
 
-/** FileUploadFormGroup metadata */
+/**
+  * FileUploadFormGroup metadata
+  * @type {Metadata}
+  */
 export const fileUploadFormGroup = {
   name: 'FileUploadFormGroup',
   variableName: 'fileUploadFormGroup',
@@ -870,7 +996,10 @@ export const fileUploadFormGroup = {
   ]
 }
 
-/** FileUpload metadata */
+/**
+  * FileUpload metadata
+  * @type {Metadata}
+  */
 export const fileUpload = {
   name: 'FileUpload',
   variableName: 'fileUpload',
@@ -900,7 +1029,10 @@ export const fileUpload = {
   }
 }
 
-/** FooterMetaItem metadata */
+/**
+  * FooterMetaItem metadata
+  * @type {Metadata}
+  */
 export const footerMetaItem = {
   name: 'FooterMetaItem',
   variableName: 'footerMetaItem',
@@ -916,7 +1048,10 @@ export const footerMetaItem = {
   ]
 }
 
-/** FooterMeta metadata */
+/**
+  * FooterMeta metadata
+  * @type {Metadata}
+  */
 export const footerMeta = {
   name: 'FooterMeta',
   variableName: 'footerMeta',
@@ -933,7 +1068,10 @@ export const footerMeta = {
   ]
 }
 
-/** FooterNavigationItem metadata */
+/**
+  * FooterNavigationItem metadata
+  * @type {Metadata}
+  */
 export const footerNavigationItem = {
   name: 'FooterNavigationItem',
   variableName: 'footerNavigationItem',
@@ -949,7 +1087,10 @@ export const footerNavigationItem = {
   ]
 }
 
-/** FooterNavigation metadata */
+/**
+  * FooterNavigation metadata
+  * @type {Metadata}
+  */
 export const footerNavigation = {
   name: 'FooterNavigation',
   variableName: 'footerNavigation',
@@ -966,7 +1107,10 @@ export const footerNavigation = {
   ]
 }
 
-/** FooterContentLicence metadata */
+/**
+  * FooterContentLicence metadata
+  * @type {Metadata}
+  */
 export const footerContentLicence = {
   name: 'FooterContentLicence',
   variableName: 'footerContentLicence',
@@ -981,7 +1125,10 @@ export const footerContentLicence = {
   ]
 }
 
-/** FooterCopyright metadata */
+/**
+  * FooterCopyright metadata
+  * @type {Metadata}
+  */
 export const footerCopyright = {
   name: 'FooterCopyright',
   variableName: 'footerCopyright',
@@ -996,7 +1143,10 @@ export const footerCopyright = {
   ]
 }
 
-/** Footer metadata */
+/**
+  * Footer metadata
+  * @type {Metadata}
+  */
 export const footer = {
   name: 'Footer',
   variableName: 'footer',
@@ -1022,7 +1172,10 @@ export const footer = {
   }
 }
 
-/** HeaderNavigation metadata */
+/**
+  * HeaderNavigation metadata
+  * @type {Metadata}
+  */
 export const headerNavigation = {
   name: 'HeaderNavigation',
   variableName: 'headerNavigation',
@@ -1040,7 +1193,10 @@ export const headerNavigation = {
   ]
 }
 
-/** Header metadata */
+/**
+  * Header metadata
+  * @type {Metadata}
+  */
 export const header = {
   name: 'Header',
   variableName: 'header',
@@ -1072,7 +1228,10 @@ export const header = {
   }
 }
 
-/** InputPrefix metadata */
+/**
+  * InputPrefix metadata
+  * @type {Metadata}
+  */
 export const inputPrefix = {
   name: 'InputPrefix',
   variableName: 'inputPrefix',
@@ -1089,7 +1248,10 @@ export const inputPrefix = {
   ]
 }
 
-/** InputSuffix metadata */
+/**
+  * InputSuffix metadata
+  * @type {Metadata}
+  */
 export const inputSuffix = {
   name: 'InputSuffix',
   variableName: 'inputSuffix',
@@ -1106,7 +1268,10 @@ export const inputSuffix = {
   ]
 }
 
-/** InputFormGroupBeforeInput metadata */
+/**
+  * InputFormGroupBeforeInput metadata
+  * @type {Metadata}
+  */
 export const inputFormGroupBeforeInput = {
   name: 'InputFormGroupBeforeInput',
   variableName: 'inputFormGroupBeforeInput',
@@ -1121,7 +1286,10 @@ export const inputFormGroupBeforeInput = {
   ]
 }
 
-/** InputFormGroupAfterInput metadata */
+/**
+  * InputFormGroupAfterInput metadata
+  * @type {Metadata}
+  */
 export const inputFormGroupAfterInput = {
   name: 'InputFormGroupAfterInput',
   variableName: 'inputFormGroupAfterInput',
@@ -1136,7 +1304,10 @@ export const inputFormGroupAfterInput = {
   ]
 }
 
-/** InputFormGroup metadata */
+/**
+  * InputFormGroup metadata
+  * @type {Metadata}
+  */
 export const inputFormGroup = {
   name: 'InputFormGroup',
   variableName: 'inputFormGroup',
@@ -1153,7 +1324,10 @@ export const inputFormGroup = {
   ]
 }
 
-/** InputInputWrapper metadata */
+/**
+  * InputInputWrapper metadata
+  * @type {Metadata}
+  */
 export const inputInputWrapper = {
   name: 'InputInputWrapper',
   variableName: 'inputInputWrapper',
@@ -1168,7 +1342,10 @@ export const inputInputWrapper = {
   ]
 }
 
-/** Input metadata */
+/**
+  * Input metadata
+  * @type {Metadata}
+  */
 export const input = {
   name: 'Input',
   variableName: 'input',
@@ -1207,7 +1384,10 @@ export const input = {
   }
 }
 
-/** InsetText metadata */
+/**
+  * InsetText metadata
+  * @type {Metadata}
+  */
 export const insetText = {
   name: 'InsetText',
   variableName: 'insetText',
@@ -1231,7 +1411,10 @@ export const insetText = {
   }
 }
 
-/** NotificationBanner metadata */
+/**
+  * NotificationBanner metadata
+  * @type {Metadata}
+  */
 export const notificationBanner = {
   name: 'NotificationBanner',
   variableName: 'notificationBanner',
@@ -1265,7 +1448,10 @@ export const notificationBanner = {
   }
 }
 
-/** PaginationItem metadata */
+/**
+  * PaginationItem metadata
+  * @type {Metadata}
+  */
 export const paginationItem = {
   name: 'PaginationItem',
   variableName: 'paginationItem',
@@ -1284,7 +1470,10 @@ export const paginationItem = {
   ]
 }
 
-/** PaginationPrevious metadata */
+/**
+  * PaginationPrevious metadata
+  * @type {Metadata}
+  */
 export const paginationPrevious = {
   name: 'PaginationPrevious',
   variableName: 'paginationPrevious',
@@ -1302,7 +1491,10 @@ export const paginationPrevious = {
   ]
 }
 
-/** PaginationNext metadata */
+/**
+  * PaginationNext metadata
+  * @type {Metadata}
+  */
 export const paginationNext = {
   name: 'PaginationNext',
   variableName: 'paginationNext',
@@ -1320,7 +1512,10 @@ export const paginationNext = {
   ]
 }
 
-/** Pagination metadata */
+/**
+  * Pagination metadata
+  * @type {Metadata}
+  */
 export const pagination = {
   name: 'Pagination',
   variableName: 'pagination',
@@ -1345,7 +1540,10 @@ export const pagination = {
   }
 }
 
-/** Panel metadata */
+/**
+  * Panel metadata
+  * @type {Metadata}
+  */
 export const panel = {
   name: 'Panel',
   variableName: 'panel',
@@ -1371,7 +1569,10 @@ export const panel = {
   }
 }
 
-/** PasswordInputFormGroupBeforeInput metadata */
+/**
+  * PasswordInputFormGroupBeforeInput metadata
+  * @type {Metadata}
+  */
 export const passwordInputFormGroupBeforeInput = {
   name: 'PasswordInputFormGroupBeforeInput',
   variableName: 'passwordInputFormGroupBeforeInput',
@@ -1386,7 +1587,10 @@ export const passwordInputFormGroupBeforeInput = {
   ]
 }
 
-/** PasswordInputFormGroupAfterInput metadata */
+/**
+  * PasswordInputFormGroupAfterInput metadata
+  * @type {Metadata}
+  */
 export const passwordInputFormGroupAfterInput = {
   name: 'PasswordInputFormGroupAfterInput',
   variableName: 'passwordInputFormGroupAfterInput',
@@ -1401,7 +1605,10 @@ export const passwordInputFormGroupAfterInput = {
   ]
 }
 
-/** PasswordInputFormGroup metadata */
+/**
+  * PasswordInputFormGroup metadata
+  * @type {Metadata}
+  */
 export const passwordInputFormGroup = {
   name: 'PasswordInputFormGroup',
   variableName: 'passwordInputFormGroup',
@@ -1418,7 +1625,10 @@ export const passwordInputFormGroup = {
   ]
 }
 
-/** PasswordInputButton metadata */
+/**
+  * PasswordInputButton metadata
+  * @type {Metadata}
+  */
 export const passwordInputButton = {
   name: 'PasswordInputButton',
   variableName: 'passwordInputButton',
@@ -1432,7 +1642,10 @@ export const passwordInputButton = {
   ]
 }
 
-/** PasswordInput metadata */
+/**
+  * PasswordInput metadata
+  * @type {Metadata}
+  */
 export const passwordInput = {
   name: 'PasswordInput',
   variableName: 'passwordInput',
@@ -1470,7 +1683,10 @@ export const passwordInput = {
   }
 }
 
-/** PhaseBanner metadata */
+/**
+  * PhaseBanner metadata
+  * @type {Metadata}
+  */
 export const phaseBanner = {
   name: 'PhaseBanner',
   variableName: 'phaseBanner',
@@ -1494,7 +1710,10 @@ export const phaseBanner = {
   }
 }
 
-/** RadiosFormGroupBeforeInputs metadata */
+/**
+  * RadiosFormGroupBeforeInputs metadata
+  * @type {Metadata}
+  */
 export const radiosFormGroupBeforeInputs = {
   name: 'RadiosFormGroupBeforeInputs',
   variableName: 'radiosFormGroupBeforeInputs',
@@ -1509,7 +1728,10 @@ export const radiosFormGroupBeforeInputs = {
   ]
 }
 
-/** RadiosFormGroupAfterInputs metadata */
+/**
+  * RadiosFormGroupAfterInputs metadata
+  * @type {Metadata}
+  */
 export const radiosFormGroupAfterInputs = {
   name: 'RadiosFormGroupAfterInputs',
   variableName: 'radiosFormGroupAfterInputs',
@@ -1524,7 +1746,10 @@ export const radiosFormGroupAfterInputs = {
   ]
 }
 
-/** RadiosFormGroup metadata */
+/**
+  * RadiosFormGroup metadata
+  * @type {Metadata}
+  */
 export const radiosFormGroup = {
   name: 'RadiosFormGroup',
   variableName: 'radiosFormGroup',
@@ -1541,7 +1766,10 @@ export const radiosFormGroup = {
   ]
 }
 
-/** RadiosItemLabel metadata */
+/**
+  * RadiosItemLabel metadata
+  * @type {Metadata}
+  */
 export const radiosItemLabel = {
   name: 'RadiosItemLabel',
   variableName: 'radiosItemLabel',
@@ -1556,7 +1784,10 @@ export const radiosItemLabel = {
   ]
 }
 
-/** RadiosItemConditional metadata */
+/**
+  * RadiosItemConditional metadata
+  * @type {Metadata}
+  */
 export const radiosItemConditional = {
   name: 'RadiosItemConditional',
   variableName: 'radiosItemConditional',
@@ -1570,7 +1801,10 @@ export const radiosItemConditional = {
   ]
 }
 
-/** RadiosItem metadata */
+/**
+  * RadiosItem metadata
+  * @type {Metadata}
+  */
 export const radiosItem = {
   name: 'RadiosItem',
   variableName: 'radiosItem',
@@ -1594,7 +1828,10 @@ export const radiosItem = {
   ]
 }
 
-/** Radios metadata */
+/**
+  * Radios metadata
+  * @type {Metadata}
+  */
 export const radios = {
   name: 'Radios',
   variableName: 'radios',
@@ -1623,7 +1860,10 @@ export const radios = {
   }
 }
 
-/** SelectItem metadata */
+/**
+  * SelectItem metadata
+  * @type {Metadata}
+  */
 export const selectItem = {
   name: 'SelectItem',
   variableName: 'selectItem',
@@ -1641,7 +1881,10 @@ export const selectItem = {
   ]
 }
 
-/** SelectFormGroupBeforeInput metadata */
+/**
+  * SelectFormGroupBeforeInput metadata
+  * @type {Metadata}
+  */
 export const selectFormGroupBeforeInput = {
   name: 'SelectFormGroupBeforeInput',
   variableName: 'selectFormGroupBeforeInput',
@@ -1656,7 +1899,10 @@ export const selectFormGroupBeforeInput = {
   ]
 }
 
-/** SelectFormGroupAfterInput metadata */
+/**
+  * SelectFormGroupAfterInput metadata
+  * @type {Metadata}
+  */
 export const selectFormGroupAfterInput = {
   name: 'SelectFormGroupAfterInput',
   variableName: 'selectFormGroupAfterInput',
@@ -1671,7 +1917,10 @@ export const selectFormGroupAfterInput = {
   ]
 }
 
-/** SelectFormGroup metadata */
+/**
+  * SelectFormGroup metadata
+  * @type {Metadata}
+  */
 export const selectFormGroup = {
   name: 'SelectFormGroup',
   variableName: 'selectFormGroup',
@@ -1688,7 +1937,10 @@ export const selectFormGroup = {
   ]
 }
 
-/** Select metadata */
+/**
+  * Select metadata
+  * @type {Metadata}
+  */
 export const select = {
   name: 'Select',
   variableName: 'select',
@@ -1719,7 +1971,10 @@ export const select = {
   }
 }
 
-/** ServiceNavigationNavigation metadata */
+/**
+  * ServiceNavigationNavigation metadata
+  * @type {Metadata}
+  */
 export const serviceNavigationNavigation = {
   name: 'ServiceNavigationNavigation',
   variableName: 'serviceNavigationNavigation',
@@ -1738,7 +1993,10 @@ export const serviceNavigationNavigation = {
   ]
 }
 
-/** ServiceNavigationSlots metadata */
+/**
+  * ServiceNavigationSlots metadata
+  * @type {Metadata}
+  */
 export const serviceNavigationSlots = {
   name: 'ServiceNavigationSlots',
   variableName: 'serviceNavigationSlots',
@@ -1755,7 +2013,10 @@ export const serviceNavigationSlots = {
   ]
 }
 
-/** ServiceNavigation metadata */
+/**
+  * ServiceNavigation metadata
+  * @type {Metadata}
+  */
 export const serviceNavigation = {
   name: 'ServiceNavigation',
   variableName: 'serviceNavigation',
@@ -1786,7 +2047,10 @@ export const serviceNavigation = {
   }
 }
 
-/** SkipLink metadata */
+/**
+  * SkipLink metadata
+  * @type {Metadata}
+  */
 export const skipLink = {
   name: 'SkipLink',
   variableName: 'skipLink',
@@ -1810,7 +2074,10 @@ export const skipLink = {
   }
 }
 
-/** SummaryListRowKey metadata */
+/**
+  * SummaryListRowKey metadata
+  * @type {Metadata}
+  */
 export const summaryListRowKey = {
   name: 'SummaryListRowKey',
   variableName: 'summaryListRowKey',
@@ -1826,7 +2093,10 @@ export const summaryListRowKey = {
   ]
 }
 
-/** SummaryListRowValue metadata */
+/**
+  * SummaryListRowValue metadata
+  * @type {Metadata}
+  */
 export const summaryListRowValue = {
   name: 'SummaryListRowValue',
   variableName: 'summaryListRowValue',
@@ -1842,7 +2112,10 @@ export const summaryListRowValue = {
   ]
 }
 
-/** SummaryListRowActionsItem metadata */
+/**
+  * SummaryListRowActionsItem metadata
+  * @type {Metadata}
+  */
 export const summaryListRowActionsItem = {
   name: 'SummaryListRowActionsItem',
   variableName: 'summaryListRowActionsItem',
@@ -1861,7 +2134,10 @@ export const summaryListRowActionsItem = {
   ]
 }
 
-/** SummaryListRowActions metadata */
+/**
+  * SummaryListRowActions metadata
+  * @type {Metadata}
+  */
 export const summaryListRowActions = {
   name: 'SummaryListRowActions',
   variableName: 'summaryListRowActions',
@@ -1876,7 +2152,10 @@ export const summaryListRowActions = {
   ]
 }
 
-/** SummaryListRow metadata */
+/**
+  * SummaryListRow metadata
+  * @type {Metadata}
+  */
 export const summaryListRow = {
   name: 'SummaryListRow',
   variableName: 'summaryListRow',
@@ -1893,7 +2172,10 @@ export const summaryListRow = {
   ]
 }
 
-/** SummaryListCardTitle metadata */
+/**
+  * SummaryListCardTitle metadata
+  * @type {Metadata}
+  */
 export const summaryListCardTitle = {
   name: 'SummaryListCardTitle',
   variableName: 'summaryListCardTitle',
@@ -1910,7 +2192,10 @@ export const summaryListCardTitle = {
   ]
 }
 
-/** SummaryListCardActionsItem metadata */
+/**
+  * SummaryListCardActionsItem metadata
+  * @type {Metadata}
+  */
 export const summaryListCardActionsItem = {
   name: 'SummaryListCardActionsItem',
   variableName: 'summaryListCardActionsItem',
@@ -1929,7 +2214,10 @@ export const summaryListCardActionsItem = {
   ]
 }
 
-/** SummaryListCardActions metadata */
+/**
+  * SummaryListCardActions metadata
+  * @type {Metadata}
+  */
 export const summaryListCardActions = {
   name: 'SummaryListCardActions',
   variableName: 'summaryListCardActions',
@@ -1944,7 +2232,10 @@ export const summaryListCardActions = {
   ]
 }
 
-/** SummaryListCard metadata */
+/**
+  * SummaryListCard metadata
+  * @type {Metadata}
+  */
 export const summaryListCard = {
   name: 'SummaryListCard',
   variableName: 'summaryListCard',
@@ -1961,7 +2252,10 @@ export const summaryListCard = {
   ]
 }
 
-/** SummaryList metadata */
+/**
+  * SummaryList metadata
+  * @type {Metadata}
+  */
 export const summaryList = {
   name: 'SummaryList',
   variableName: 'summaryList',
@@ -1984,7 +2278,10 @@ export const summaryList = {
   }
 }
 
-/** TableRow metadata */
+/**
+  * TableRow metadata
+  * @type {Metadata}
+  */
 export const tableRow = {
   name: 'TableRow',
   variableName: 'tableRow',
@@ -2004,7 +2301,10 @@ export const tableRow = {
   ]
 }
 
-/** TableHead metadata */
+/**
+  * TableHead metadata
+  * @type {Metadata}
+  */
 export const tableHead = {
   name: 'TableHead',
   variableName: 'tableHead',
@@ -2024,7 +2324,10 @@ export const tableHead = {
   ]
 }
 
-/** Table metadata */
+/**
+  * Table metadata
+  * @type {Metadata}
+  */
 export const table = {
   name: 'Table',
   variableName: 'table',
@@ -2050,7 +2353,10 @@ export const table = {
   }
 }
 
-/** TabsItemPanel metadata */
+/**
+  * TabsItemPanel metadata
+  * @type {Metadata}
+  */
 export const tabsItemPanel = {
   name: 'TabsItemPanel',
   variableName: 'tabsItemPanel',
@@ -2066,7 +2372,10 @@ export const tabsItemPanel = {
   ]
 }
 
-/** TabsItem metadata */
+/**
+  * TabsItem metadata
+  * @type {Metadata}
+  */
 export const tabsItem = {
   name: 'TabsItem',
   variableName: 'tabsItem',
@@ -2083,7 +2392,10 @@ export const tabsItem = {
   ]
 }
 
-/** Tabs metadata */
+/**
+  * Tabs metadata
+  * @type {Metadata}
+  */
 export const tabs = {
   name: 'Tabs',
   variableName: 'tabs',
@@ -2108,7 +2420,10 @@ export const tabs = {
   }
 }
 
-/** TaskListItemTitle metadata */
+/**
+  * TaskListItemTitle metadata
+  * @type {Metadata}
+  */
 export const taskListItemTitle = {
   name: 'TaskListItemTitle',
   variableName: 'taskListItemTitle',
@@ -2124,7 +2439,10 @@ export const taskListItemTitle = {
   ]
 }
 
-/** TaskListItemHint metadata */
+/**
+  * TaskListItemHint metadata
+  * @type {Metadata}
+  */
 export const taskListItemHint = {
   name: 'TaskListItemHint',
   variableName: 'taskListItemHint',
@@ -2139,7 +2457,10 @@ export const taskListItemHint = {
   ]
 }
 
-/** TaskListItemStatus metadata */
+/**
+  * TaskListItemStatus metadata
+  * @type {Metadata}
+  */
 export const taskListItemStatus = {
   name: 'TaskListItemStatus',
   variableName: 'taskListItemStatus',
@@ -2156,7 +2477,10 @@ export const taskListItemStatus = {
   ]
 }
 
-/** TaskListItem metadata */
+/**
+  * TaskListItem metadata
+  * @type {Metadata}
+  */
 export const taskListItem = {
   name: 'TaskListItem',
   variableName: 'taskListItem',
@@ -2174,7 +2498,10 @@ export const taskListItem = {
   ]
 }
 
-/** TaskList metadata */
+/**
+  * TaskList metadata
+  * @type {Metadata}
+  */
 export const taskList = {
   name: 'TaskList',
   variableName: 'taskList',
@@ -2197,7 +2524,10 @@ export const taskList = {
   }
 }
 
-/** TextareaFormGroupBeforeInput metadata */
+/**
+  * TextareaFormGroupBeforeInput metadata
+  * @type {Metadata}
+  */
 export const textareaFormGroupBeforeInput = {
   name: 'TextareaFormGroupBeforeInput',
   variableName: 'textareaFormGroupBeforeInput',
@@ -2212,7 +2542,10 @@ export const textareaFormGroupBeforeInput = {
   ]
 }
 
-/** TextareaFormGroupAfterInput metadata */
+/**
+  * TextareaFormGroupAfterInput metadata
+  * @type {Metadata}
+  */
 export const textareaFormGroupAfterInput = {
   name: 'TextareaFormGroupAfterInput',
   variableName: 'textareaFormGroupAfterInput',
@@ -2227,7 +2560,10 @@ export const textareaFormGroupAfterInput = {
   ]
 }
 
-/** TextareaFormGroup metadata */
+/**
+  * TextareaFormGroup metadata
+  * @type {Metadata}
+  */
 export const textareaFormGroup = {
   name: 'TextareaFormGroup',
   variableName: 'textareaFormGroup',
@@ -2244,7 +2580,10 @@ export const textareaFormGroup = {
   ]
 }
 
-/** Textarea metadata */
+/**
+  * Textarea metadata
+  * @type {Metadata}
+  */
 export const textarea = {
   name: 'Textarea',
   variableName: 'textarea',
@@ -2277,7 +2616,10 @@ export const textarea = {
   }
 }
 
-/** WarningText metadata */
+/**
+  * WarningText metadata
+  * @type {Metadata}
+  */
 export const warningText = {
   name: 'WarningText',
   variableName: 'warningText',
@@ -2300,3 +2642,40 @@ export const warningText = {
     isFormComponent: false,
   }
 }
+
+/**
+ * Represents a single configurable key in a component’s metadata.
+ * @typedef {object} MetadataKey
+ * @property {string} name - The key name (e.g., 'text', 'html', 'for')
+ * @property {string} type - The type of value (e.g., 'string', 'boolean', 'object')
+ * @property {string} title - Human-readable label for the key
+ * @property {string} hint - Description or hint for the key’s purpose
+ * @property {boolean} required - Whether this key is required
+ * @property {boolean} isComponent - Whether this key refers to another component
+ * @property {Metadata} [subType] - Sub metadata for a component definition
+ */
+
+/**
+ * Represents a nested component reference in the metadata.
+ * @typedef {object} MetadataComponent
+ * @property {string} id - The unique ID of the component (e.g., 'label')
+ * @property {string} title - Display title for the component
+ * @property {string} name - Component name (e.g., 'Label')
+ * @property {string} variableName - Variable-safe version of the name (e.g., 'label')
+ * @property {string} macroName - Nunjucks macro name (e.g., 'govukLabel')
+ * @property {boolean} isFormComponent - Whether this is part of a form component
+ */
+
+/**
+ * Describes metadata for a GOV.UK component definition.
+ * @typedef {object} Metadata
+ * @property {string} name - The name of the component (e.g., 'Label', 'AccordionItemHeading')
+ * @property {string} variableName - The variable-safe name (e.g., 'label')
+ * @property {string} schemaName - The schema name used for validation
+ * @property {string} formSchemaName - The schema name used for form validation
+ * @property {string} title - A human-readable title for the component
+ * @property {MetadataKey[]} keys - The configurable keys for this component
+ * @property {string} [key] - A single key identifier, if applicable (e.g., 'heading')
+ * @property {string} [keyTitle] - A title for the single key, if applicable
+ * @property {MetadataComponent} [component] - Nested component reference, if applicable
+ */
