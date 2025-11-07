@@ -45,7 +45,7 @@ export const COMPONENT = {
 /**
  * GOVUK component meta enum
  * @readonly
- * @enum {string}
+ * @enum {MetaName}
  */
 export const META = {
   'accordion': /** @type {MetaName} */ ('accordion'),
