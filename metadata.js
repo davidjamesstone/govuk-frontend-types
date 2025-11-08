@@ -1168,7 +1168,8 @@ export const footer = {
     { name: 'copyright', type: 'object', title: 'Copyright', hint: `The copyright information in the footer component, this defaults to \`"© Crown copyright"\`.`, required: false, isComponent: false, subType: footerCopyright },
     { name: 'containerClasses', type: 'string', title: 'Container classes', hint: `Classes that can be added to the inner container, useful if you want to make the footer full width.`, required: false, isComponent: false },
     { name: 'classes', type: 'string', title: 'Classes', hint: `Classes to add to the footer component container.`, required: false, isComponent: false },
-    { name: 'attributes', type: 'object', title: 'Attributes', hint: `HTML attributes (for example data attributes) to add to the footer component container.`, required: false, isComponent: false }
+    { name: 'attributes', type: 'object', title: 'Attributes', hint: `HTML attributes (for example data attributes) to add to the footer component container.`, required: false, isComponent: false },
+    { name: 'rebrand', type: 'boolean', title: 'Rebrand', hint: `If \`true\`, use the redesigned footer with the GOV.UK crown. Default is \`false\`.`, required: false, isComponent: false }
   ],
   component: {
     id: 'footer',
@@ -1224,7 +1225,8 @@ export const header = {
     { name: 'containerClasses', type: 'string', title: 'Container classes', hint: `Classes for the container, useful if you want to make the header fixed width.`, required: false, isComponent: false },
     { name: 'classes', type: 'string', title: 'Classes', hint: `Classes to add to the header container.`, required: false, isComponent: false },
     { name: 'attributes', type: 'object', title: 'Attributes', hint: `HTML attributes (for example data attributes) to add to the header container.`, required: false, isComponent: false },
-    { name: 'useTudorCrown', type: 'boolean', title: 'Use tudor crown', hint: `If \`true\`, uses the Tudor crown from King Charles III's royal cypher. Otherwise, uses the St. Edward's crown. Default is \`true\`.`, required: false, isComponent: false }
+    { name: 'useTudorCrown', type: 'boolean', title: 'Use tudor crown', hint: `If \`true\`, uses the Tudor crown from King Charles III's royal cypher. Otherwise, uses the St. Edward's crown. Default is \`true\`.`, required: false, isComponent: false },
+    { name: 'rebrand', type: 'boolean', title: 'Rebrand', hint: `If \`true\`, use the redesigned header and new GOV.UK logotype. Default is \`false\`.`, required: false, isComponent: false }
   ],
   component: {
     id: 'header',

@@ -490,6 +490,7 @@
  * @property {string} [containerClasses] - Classes that can be added to the inner container, useful if you want to make the footer full width.
  * @property {string} [classes] - Classes to add to the footer component container.
  * @property {object} [attributes] - HTML attributes (for example data attributes) to add to the footer component container.
+ * @property {boolean} [rebrand] - If `true`, use the redesigned footer with the GOV.UK crown. Default is `false`.
  */
 
 /**
@@ -518,6 +519,7 @@
  * @property {string} [classes] - Classes to add to the header container.
  * @property {object} [attributes] - HTML attributes (for example data attributes) to add to the header container.
  * @property {boolean} [useTudorCrown] - If `true`, uses the Tudor crown from King Charles III's royal cypher. Otherwise, uses the St. Edward's crown. Default is `true`.
+ * @property {boolean} [rebrand] - If `true`, use the redesigned header and new GOV.UK logotype. Default is `false`.
  */
 
 /**

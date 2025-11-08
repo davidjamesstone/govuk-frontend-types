@@ -836,7 +836,8 @@ export const footerFormSchema = joi
   .object()
   .keys({
     containerClasses: joi.string().allow('').label('Container classes'),
-    classes: joi.string().allow('').label('Classes')
+    classes: joi.string().allow('').label('Classes'),
+    rebrand: joi.boolean().label('Rebrand')
   })
 
 /** @type {joi.ObjectSchema<Footer>} */
@@ -882,7 +883,8 @@ export const headerFormSchema = joi
     menuButtonText: joi.string().allow('').label('Menu button text'),
     containerClasses: joi.string().allow('').label('Container classes'),
     classes: joi.string().allow('').label('Classes'),
-    useTudorCrown: joi.boolean().label('Use tudor crown')
+    useTudorCrown: joi.boolean().label('Use tudor crown'),
+    rebrand: joi.boolean().label('Rebrand')
   })
 
 /** @type {joi.ObjectSchema<Header>} */
