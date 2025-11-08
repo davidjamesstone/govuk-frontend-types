@@ -1012,7 +1012,8 @@
           "name": "element",
           "type": "string",
           "required": false,
-          "description": "HTML element for the button component – `input`, `button` or `a`. In most cases you will not need to set this as it will be configured automatically if `href` is provided. This parameter will be removed in the next major version."
+          "description": "HTML element for the button component – `input`, `button` or `a`. In most cases you will not need to set this as it will be configured automatically if `href` is provided.",
+          "deprecated": "5.1.0"
         },
         {
           "name": "text",
@@ -1610,8 +1611,8 @@
         {
           "name": "id",
           "type": "string",
-          "required": true,
-          "description": "The ID of the textarea."
+          "required": false,
+          "description": "The ID of the textarea. Defaults to the value of `name`."
         },
         {
           "name": "name",
@@ -1810,7 +1811,6 @@
           "name": "default",
           "options": {
             "name": "more-detail",
-            "id": "more-detail",
             "maxlength": 10,
             "label": {
               "text": "Can you provide more detail?"
@@ -2013,6 +2013,22 @@
           "previewLayoutModifiers": [],
           "screenshot": false,
           "html": "<div class=\"govuk-form-group govuk-character-count\" data-module=\"govuk-character-count\" data-maxlength=\"10\">\n  <label class=\"govuk-label\" for=\"with-classes\">\n    With classes\n  </label>\n  <textarea class=\"govuk-textarea govuk-js-character-count app-character-count--custom-modifier\" id=\"with-classes\" name=\"with-classes\" rows=\"5\" aria-describedby=\"with-classes-info\"></textarea>\n  <div id=\"with-classes-info\" class=\"govuk-hint govuk-character-count__message\">\n    You can enter up to 10 characters\n  </div>\n</div>"
+        },
+        {
+          "name": "id",
+          "options": {
+            "id": "character-count-id",
+            "name": "test-name",
+            "maxlength": 10,
+            "label": {
+              "text": "With custom id"
+            }
+          },
+          "hidden": true,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group govuk-character-count\" data-module=\"govuk-character-count\" data-maxlength=\"10\">\n  <label class=\"govuk-label\" for=\"character-count-id\">\n    With custom id\n  </label>\n  <textarea class=\"govuk-textarea govuk-js-character-count\" id=\"character-count-id\" name=\"test-name\" rows=\"5\" aria-describedby=\"character-count-id-info\"></textarea>\n  <div id=\"character-count-id-info\" class=\"govuk-hint govuk-character-count__message\">\n    You can enter up to 10 characters\n  </div>\n</div>"
         },
         {
           "name": "attributes",
@@ -6750,20 +6766,27 @@
         {
           "name": "id",
           "type": "string",
-          "required": true,
-          "description": "The ID of the input."
+          "required": false,
+          "description": "The ID of the input. Defaults to the value of `name`."
         },
         {
           "name": "value",
           "type": "string",
           "required": false,
-          "description": "Deprecated. Optional initial value of the input."
+          "description": "Optional initial value of the input.",
+          "deprecated": "5.7.1"
         },
         {
           "name": "disabled",
           "type": "boolean",
           "required": false,
           "description": "If `true`, file input will be disabled."
+        },
+        {
+          "name": "multiple",
+          "type": "boolean",
+          "required": false,
+          "description": "If `true`, a user may select multiple files at the same time. The exact mechanism to do this differs depending on operating system."
         },
         {
           "name": "describedBy",
@@ -6853,6 +6876,48 @@
           ]
         },
         {
+          "name": "javascript",
+          "type": "boolean",
+          "required": false,
+          "description": "Can be used to enable JavaScript enhancements for the component."
+        },
+        {
+          "name": "chooseFilesButtonText",
+          "type": "string",
+          "required": false,
+          "description": "The text of the button that opens the file picker. Default is `\"Choose file\"`. If `javascript` is not provided, this option will be ignored."
+        },
+        {
+          "name": "dropInstructionText",
+          "type": "string",
+          "required": false,
+          "description": "The text informing users they can drop files. Default is `\"or drop file\"`. If `javascript` is not provided, this option will be ignored."
+        },
+        {
+          "name": "multipleFilesChosenText",
+          "type": "object",
+          "required": false,
+          "description": "The text displayed when multiple files have been chosen by the user. The component will replace the `%{count}` placeholder with the number of files selected. [Our pluralisation rules apply to this macro option](https://frontend.design-system.service.gov.uk/localise-govuk-frontend/#understanding-pluralisation-rules). If `javascript` is not provided, this option will be ignored."
+        },
+        {
+          "name": "noFileChosenText",
+          "type": "string",
+          "required": false,
+          "description": "The text displayed when no file has been chosen by the user. Default is `\"No file chosen\"`. If `javascript` is not provided, this option will be ignored."
+        },
+        {
+          "name": "enteredDropZoneText",
+          "type": "string",
+          "required": false,
+          "description": "The text announced by assistive technology when user drags files and enters the drop zone. Default is `\"Entered drop zone\"`. If `javascript` is not provided, this option will be ignored."
+        },
+        {
+          "name": "leftDropZoneText",
+          "type": "string",
+          "required": false,
+          "description": "The text announced by assistive technology when user drags files and leaves the drop zone without dropping. Default is `\"Left drop zone\"`. If `javascript` is not provided, this option will be ignored."
+        },
+        {
           "name": "classes",
           "type": "string",
           "required": false,
@@ -6869,7 +6934,6 @@
         {
           "name": "default",
           "options": {
-            "id": "file-upload-1",
             "name": "file-upload-1",
             "label": {
               "text": "Upload a file"
@@ -6880,6 +6944,74 @@
           "previewLayoutModifiers": [],
           "screenshot": false,
           "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-1\">\n    Upload a file\n  </label>\n  <input class=\"govuk-file-upload\" id=\"file-upload-1\" name=\"file-upload-1\" type=\"file\">\n</div>"
+        },
+        {
+          "name": "allows multiple files",
+          "options": {
+            "id": "file-upload-1",
+            "name": "file-upload-1",
+            "label": {
+              "text": "Upload a file"
+            },
+            "multiple": true
+          },
+          "hidden": false,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-1\">\n    Upload a file\n  </label>\n  <input class=\"govuk-file-upload\" id=\"file-upload-1\" name=\"file-upload-1\" type=\"file\" multiple>\n</div>"
+        },
+        {
+          "name": "allows image files only",
+          "options": {
+            "id": "file-upload-1",
+            "name": "file-upload-1",
+            "label": {
+              "text": "Upload a file"
+            },
+            "attributes": {
+              "accept": "image/*"
+            }
+          },
+          "hidden": false,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-1\">\n    Upload a file\n  </label>\n  <input class=\"govuk-file-upload\" id=\"file-upload-1\" name=\"file-upload-1\" type=\"file\" accept=\"image/*\">\n</div>"
+        },
+        {
+          "name": "allows direct media capture",
+          "options": {
+            "id": "file-upload-1",
+            "name": "file-upload-1",
+            "label": {
+              "text": "Upload a file"
+            },
+            "attributes": {
+              "capture": "user"
+            }
+          },
+          "hidden": false,
+          "description": "Currently only works on mobile devices.",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-1\">\n    Upload a file\n  </label>\n  <input class=\"govuk-file-upload\" id=\"file-upload-1\" name=\"file-upload-1\" type=\"file\" capture=\"user\">\n</div>"
+        },
+        {
+          "name": "disabled",
+          "options": {
+            "id": "file-upload-1",
+            "name": "file-upload-1",
+            "label": {
+              "text": "Upload a file"
+            },
+            "disabled": true
+          },
+          "hidden": false,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-1\">\n    Upload a file\n  </label>\n  <input class=\"govuk-file-upload\" id=\"file-upload-1\" name=\"file-upload-1\" type=\"file\" disabled>\n</div>"
         },
         {
           "name": "with hint text",
@@ -6921,22 +7053,6 @@
           "html": "<div class=\"govuk-form-group govuk-form-group--error\">\n  <label class=\"govuk-label\" for=\"file-upload-3\">\n    Upload a file\n  </label>\n  <div id=\"file-upload-3-hint\" class=\"govuk-hint\">\n    Your photo may be in your Pictures, Photos, Downloads or Desktop folder. Or in an app like iPhoto.\n  </div>\n  <p id=\"file-upload-3-error\" class=\"govuk-error-message\">\n    <span class=\"govuk-visually-hidden\">Error:</span> Error message goes here\n  </p>\n  <input class=\"govuk-file-upload govuk-file-upload--error\" id=\"file-upload-3\" name=\"file-upload-3\" type=\"file\" aria-describedby=\"file-upload-3-hint file-upload-3-error\">\n</div>"
         },
         {
-          "name": "with value",
-          "options": {
-            "id": "file-upload-4",
-            "name": "file-upload-4",
-            "value": "C:\\fakepath\\myphoto.jpg",
-            "label": {
-              "text": "Upload a photo"
-            }
-          },
-          "hidden": false,
-          "description": "",
-          "previewLayoutModifiers": [],
-          "screenshot": false,
-          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-4\">\n    Upload a photo\n  </label>\n  <input class=\"govuk-file-upload\" id=\"file-upload-4\" name=\"file-upload-4\" type=\"file\" value=\"C:&#92;fakepath&#92;myphoto.jpg\">\n</div>"
-        },
-        {
           "name": "with label as page heading",
           "options": {
             "id": "file-upload-1",
@@ -6972,6 +7088,106 @@
           "html": "<div class=\"govuk-form-group extra-class\">\n  <label class=\"govuk-label\" for=\"file-upload-1\">\n    Upload a file\n  </label>\n  <input class=\"govuk-file-upload\" id=\"file-upload-1\" name=\"file-upload-1\" type=\"file\">\n</div>"
         },
         {
+          "name": "enhanced",
+          "options": {
+            "id": "file-upload-1",
+            "name": "file-upload-1",
+            "label": {
+              "text": "Upload a file"
+            },
+            "javascript": true
+          },
+          "hidden": false,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": true,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-1\">\n    Upload a file\n  </label>\n  <div\n    class=\"govuk-drop-zone\"\n    data-module=\"govuk-file-upload\">\n  <input class=\"govuk-file-upload\" id=\"file-upload-1\" name=\"file-upload-1\" type=\"file\">\n  </div>\n</div>"
+        },
+        {
+          "name": "enhanced, disabled",
+          "options": {
+            "javascript": true,
+            "disabled": true,
+            "id": "file-upload-error",
+            "name": "file-upload-error",
+            "label": {
+              "text": "Upload a file"
+            },
+            "hint": {
+              "text": "Your photo may be in your Pictures, Photos, Downloads or Desktop folder. Or in an app like iPhoto."
+            }
+          },
+          "hidden": false,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-error\">\n    Upload a file\n  </label>\n  <div id=\"file-upload-error-hint\" class=\"govuk-hint\">\n    Your photo may be in your Pictures, Photos, Downloads or Desktop folder. Or in an app like iPhoto.\n  </div>\n  <div\n    class=\"govuk-drop-zone\"\n    data-module=\"govuk-file-upload\">\n  <input class=\"govuk-file-upload\" id=\"file-upload-error\" name=\"file-upload-error\" type=\"file\" disabled aria-describedby=\"file-upload-error-hint\">\n  </div>\n</div>"
+        },
+        {
+          "name": "enhanced, with error message and hint",
+          "options": {
+            "javascript": true,
+            "id": "file-upload-3",
+            "name": "file-upload-3",
+            "label": {
+              "text": "Upload a file"
+            },
+            "hint": {
+              "text": "Your photo may be in your Pictures, Photos, Downloads or Desktop folder. Or in an app like iPhoto."
+            },
+            "errorMessage": {
+              "text": "Error message goes here"
+            }
+          },
+          "hidden": false,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group govuk-form-group--error\">\n  <label class=\"govuk-label\" for=\"file-upload-3\">\n    Upload a file\n  </label>\n  <div id=\"file-upload-3-hint\" class=\"govuk-hint\">\n    Your photo may be in your Pictures, Photos, Downloads or Desktop folder. Or in an app like iPhoto.\n  </div>\n  <p id=\"file-upload-3-error\" class=\"govuk-error-message\">\n    <span class=\"govuk-visually-hidden\">Error:</span> Error message goes here\n  </p>\n  <div\n    class=\"govuk-drop-zone\"\n    data-module=\"govuk-file-upload\">\n  <input class=\"govuk-file-upload govuk-file-upload--error\" id=\"file-upload-3\" name=\"file-upload-3\" type=\"file\" aria-describedby=\"file-upload-3-hint file-upload-3-error\">\n  </div>\n</div>"
+        },
+        {
+          "name": "translated",
+          "options": {
+            "id": "file-upload-1",
+            "name": "file-upload-1",
+            "label": {
+              "text": "Llwythwch ffeil i fyny"
+            },
+            "multiple": true,
+            "javascript": true,
+            "chooseFilesButtonText": "Dewiswch ffeil",
+            "dropInstructionText": "neu ollwng ffeil",
+            "noFileChosenText": "Dim ffeil wedi'i dewis",
+            "multipleFilesChosenText": {
+              "other": "%{count} ffeil wedi'u dewis",
+              "one": "%{count} ffeil wedi'i dewis"
+            },
+            "enteredDropZoneText": "Wedi mynd i mewn i'r parth gollwng",
+            "leftDropZoneText": "Parth gollwng i'r chwith"
+          },
+          "hidden": false,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-1\">\n    Llwythwch ffeil i fyny\n  </label>\n  <div\n    class=\"govuk-drop-zone\"\n    data-module=\"govuk-file-upload\" data-i18n.choose-files-button=\"Dewiswch ffeil\" data-i18n.no-file-chosen=\"Dim ffeil wedi&#39;i dewis\" data-i18n.multiple-files-chosen.other=\"%{count} ffeil wedi&#39;u dewis\" data-i18n.multiple-files-chosen.one=\"%{count} ffeil wedi&#39;i dewis\" data-i18n.drop-instruction=\"neu ollwng ffeil\" data-i18n.entered-drop-zone=\"Wedi mynd i mewn i&#39;r parth gollwng\" data-i18n.left-drop-zone=\"Parth gollwng i&#39;r chwith\">\n  <input class=\"govuk-file-upload\" id=\"file-upload-1\" name=\"file-upload-1\" type=\"file\" multiple>\n  </div>\n</div>"
+        },
+        {
+          "name": "with value",
+          "options": {
+            "id": "file-upload-4",
+            "name": "file-upload-4",
+            "value": "C:\\fakepath\\myphoto.jpg",
+            "label": {
+              "text": "Upload a photo"
+            }
+          },
+          "hidden": true,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-4\">\n    Upload a photo\n  </label>\n  <input class=\"govuk-file-upload\" id=\"file-upload-4\" name=\"file-upload-4\" type=\"file\" value=\"C:&#92;fakepath&#92;myphoto.jpg\">\n</div>"
+        },
+        {
           "name": "attributes",
           "options": {
             "id": "file-upload-attributes",
@@ -7004,6 +7220,21 @@
           "previewLayoutModifiers": [],
           "screenshot": false,
           "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-classes\">\n    Upload a file\n  </label>\n  <input class=\"govuk-file-upload app-file-upload--custom-modifier\" id=\"file-upload-classes\" name=\"file-upload-classes\" type=\"file\">\n</div>"
+        },
+        {
+          "name": "id",
+          "options": {
+            "id": "file-upload-id",
+            "name": "test-name",
+            "label": {
+              "text": "Upload a file"
+            }
+          },
+          "hidden": true,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-id\">\n    Upload a file\n  </label>\n  <input class=\"govuk-file-upload\" id=\"file-upload-id\" name=\"test-name\" type=\"file\">\n</div>"
         },
         {
           "name": "with describedBy",
@@ -7098,6 +7329,31 @@
           "previewLayoutModifiers": [],
           "screenshot": false,
           "html": "<div class=\"govuk-form-group govuk-form-group--error\">\n  <label class=\"govuk-label\" for=\"file-upload-error-describedby-hint\">\n    Upload a file\n  </label>\n  <div id=\"file-upload-error-describedby-hint-hint\" class=\"govuk-hint\">\n    hint\n  </div>\n  <p id=\"file-upload-error-describedby-hint-error\" class=\"govuk-error-message\">\n    <span class=\"govuk-visually-hidden\">Error:</span> Error message\n  </p>\n  <input class=\"govuk-file-upload govuk-file-upload--error\" id=\"file-upload-error-describedby-hint\" name=\"file-upload-error-describedby-hint\" type=\"file\" aria-describedby=\"test-target-element file-upload-error-describedby-hint-hint file-upload-error-describedby-hint-error\">\n</div>"
+        },
+        {
+          "name": "translated, no javascript enhancement",
+          "options": {
+            "id": "file-upload-1",
+            "name": "file-upload-1",
+            "label": {
+              "text": "Llwythwch ffeil i fyny"
+            },
+            "multiple": true,
+            "chooseFilesButtonText": "Dewiswch ffeil",
+            "dropInstructionText": "neu ollwng ffeil",
+            "noFileChosenText": "Dim ffeil wedi'i dewis",
+            "multipleFilesChosenText": {
+              "other": "%{count} ffeil wedi'u dewis",
+              "one": "%{count} ffeil wedi'i dewis"
+            },
+            "enteredDropZoneText": "Wedi mynd i mewn i'r parth gollwng",
+            "leftDropZoneText": "Parth gollwng i'r chwith"
+          },
+          "hidden": true,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-1\">\n    Llwythwch ffeil i fyny\n  </label>\n  <input class=\"govuk-file-upload\" id=\"file-upload-1\" name=\"file-upload-1\" type=\"file\" multiple>\n</div>"
         }
       ]
     }
@@ -8011,49 +8267,57 @@
           "name": "serviceName",
           "type": "string",
           "required": false,
-          "description": "The name of your service, included in the header."
+          "description": "The name of your service, included in the header.",
+          "deprecated": "5.9.0"
         },
         {
           "name": "serviceUrl",
           "type": "string",
           "required": false,
-          "description": "URL for the service name anchor."
+          "description": "URL for the service name anchor.",
+          "deprecated": "5.9.0"
         },
         {
           "name": "navigation",
           "type": "array",
           "required": false,
           "description": "Can be used to add navigation to the header component.",
+          "deprecated": "5.9.0",
           "params": [
             {
               "name": "text",
               "type": "string",
               "required": true,
-              "description": "Text for the navigation item. If `html` is provided, the `text` option will be ignored."
+              "description": "Text for the navigation item. If `html` is provided, the `text` option will be ignored.",
+              "deprecated": "5.9.0"
             },
             {
               "name": "html",
               "type": "string",
               "required": true,
-              "description": "HTML for the navigation item. If `html` is provided, the `text` option will be ignored."
+              "description": "HTML for the navigation item. If `html` is provided, the `text` option will be ignored.",
+              "deprecated": "5.9.0"
             },
             {
               "name": "href",
               "type": "string",
               "required": false,
-              "description": "URL of the navigation item anchor."
+              "description": "URL of the navigation item anchor.",
+              "deprecated": "5.9.0"
             },
             {
               "name": "active",
               "type": "boolean",
               "required": false,
-              "description": "Flag to mark the navigation item as active or not."
+              "description": "Flag to mark the navigation item as active or not.",
+              "deprecated": "5.9.0"
             },
             {
               "name": "attributes",
               "type": "object",
               "required": false,
-              "description": "HTML attributes (for example data attributes) to add to the navigation item anchor."
+              "description": "HTML attributes (for example data attributes) to add to the navigation item anchor.",
+              "deprecated": "5.9.0"
             }
           ]
         },
@@ -8061,25 +8325,29 @@
           "name": "navigationClasses",
           "type": "string",
           "required": false,
-          "description": "Classes for the navigation section of the header."
+          "description": "Classes for the navigation section of the header.",
+          "deprecated": "5.9.0"
         },
         {
           "name": "navigationLabel",
           "type": "string",
           "required": false,
-          "description": "Text for the `aria-label` attribute of the navigation. Defaults to the same value as `menuButtonText`."
+          "description": "Text for the `aria-label` attribute of the navigation. Defaults to the same value as `menuButtonText`.",
+          "deprecated": "5.9.0"
         },
         {
           "name": "menuButtonLabel",
           "type": "string",
           "required": false,
-          "description": "Text for the `aria-label` attribute of the button that opens the mobile navigation, if there is a mobile navigation menu."
+          "description": "Text for the `aria-label` attribute of the button that opens the mobile navigation, if there is a mobile navigation menu.",
+          "deprecated": "5.9.0"
         },
         {
           "name": "menuButtonText",
           "type": "string",
           "required": false,
-          "description": "Text of the button that opens the mobile navigation menu, if there is a mobile navigation menu. There is no enforced character limit, but there is a limited display space so keep text as short as possible. By default, this is set to 'Menu'."
+          "description": "Text of the button that opens the mobile navigation menu, if there is a mobile navigation menu. There is no enforced character limit, but there is a limited display space so keep text as short as possible. By default, this is set to 'Menu'.",
+          "deprecated": "5.9.0"
         },
         {
           "name": "containerClasses",
@@ -8103,7 +8371,8 @@
           "name": "useTudorCrown",
           "type": "boolean",
           "required": false,
-          "description": "Deprecated. If `true`, uses the Tudor crown from King Charles III's royal cypher. Otherwise, uses the St. Edward's crown. Default is `true`."
+          "description": "If `true`, uses the Tudor crown from King Charles III's royal cypher. Otherwise, uses the St. Edward's crown. Default is `true`.",
+          "deprecated": "5.2.0"
         }
       ],
       "examples": [
@@ -8771,8 +9040,8 @@
         {
           "name": "id",
           "type": "string",
-          "required": true,
-          "description": "The ID of the input."
+          "required": false,
+          "description": "The ID of the input. Defaults to the value of `name`."
         },
         {
           "name": "name",
@@ -9019,14 +9288,13 @@
             "label": {
               "text": "National Insurance number"
             },
-            "id": "input-example",
             "name": "test-name"
           },
           "hidden": false,
           "description": "",
           "previewLayoutModifiers": [],
           "screenshot": false,
-          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"input-example\">\n    National Insurance number\n  </label>\n  <input class=\"govuk-input\" id=\"input-example\" name=\"test-name\" type=\"text\">\n</div>"
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"test-name\">\n    National Insurance number\n  </label>\n  <input class=\"govuk-input\" id=\"test-name\" name=\"test-name\" type=\"text\">\n</div>"
         },
         {
           "name": "with hint text",
@@ -9507,6 +9775,21 @@
           "previewLayoutModifiers": [],
           "screenshot": false,
           "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"with-classes\">\n    With classes\n  </label>\n  <input class=\"govuk-input app-input--custom-modifier\" id=\"with-classes\" name=\"with-classes\" type=\"text\">\n</div>"
+        },
+        {
+          "name": "id",
+          "options": {
+            "id": "input-id",
+            "name": "testing-name",
+            "label": {
+              "text": "With custom id"
+            }
+          },
+          "hidden": true,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"input-id\">\n    With custom id\n  </label>\n  <input class=\"govuk-input\" id=\"input-id\" name=\"testing-name\" type=\"text\">\n</div>"
         },
         {
           "name": "custom type",
@@ -11344,8 +11627,8 @@
         {
           "name": "id",
           "type": "string",
-          "required": true,
-          "description": "The ID of the input."
+          "required": false,
+          "description": "The ID of the input. Defaults to the value of `name`."
         },
         {
           "name": "name",
@@ -11528,14 +11811,13 @@
             "label": {
               "text": "Password"
             },
-            "id": "password-input",
             "name": "password"
           },
           "hidden": false,
           "description": "",
           "previewLayoutModifiers": [],
           "screenshot": false,
-          "html": "<div class=\"govuk-form-group govuk-password-input\" data-module=\"govuk-password-input\">\n  <label class=\"govuk-label\" for=\"password-input\">\n    Password\n  </label>\n  <div class=\"govuk-input__wrapper govuk-password-input__wrapper\">\n    <input class=\"govuk-input govuk-password-input__input govuk-js-password-input-input\" id=\"password-input\" name=\"password\" type=\"password\" spellcheck=\"false\" autocomplete=\"current-password\" autocapitalize=\"none\">\n    <button type=\"button\" class=\"govuk-button govuk-button--secondary govuk-password-input__toggle govuk-js-password-input-toggle\" data-module=\"govuk-button\" aria-controls=\"password-input\" aria-label=\"Show password\" hidden>\n      Show\n    </button>\n  </div>\n</div>"
+          "html": "<div class=\"govuk-form-group govuk-password-input\" data-module=\"govuk-password-input\">\n  <label class=\"govuk-label\" for=\"password\">\n    Password\n  </label>\n  <div class=\"govuk-input__wrapper govuk-password-input__wrapper\">\n    <input class=\"govuk-input govuk-password-input__input govuk-js-password-input-input\" id=\"password\" name=\"password\" type=\"password\" spellcheck=\"false\" autocomplete=\"current-password\" autocapitalize=\"none\">\n    <button type=\"button\" class=\"govuk-button govuk-button--secondary govuk-password-input__toggle govuk-js-password-input-toggle\" data-module=\"govuk-button\" aria-controls=\"password\" aria-label=\"Show password\" hidden>\n      Show\n    </button>\n  </div>\n</div>"
         },
         {
           "name": "with hint text",
@@ -11661,6 +11943,21 @@
           "previewLayoutModifiers": [],
           "screenshot": false,
           "html": "<div class=\"govuk-form-group govuk-password-input\" data-module=\"govuk-password-input\">\n  <label class=\"govuk-label\" for=\"with-classes\">\n    With classes\n  </label>\n  <div class=\"govuk-input__wrapper govuk-password-input__wrapper\">\n    <input class=\"govuk-input govuk-password-input__input govuk-js-password-input-input app-input--custom-modifier\" id=\"with-classes\" name=\"with-classes\" type=\"password\" spellcheck=\"false\" autocomplete=\"current-password\" autocapitalize=\"none\">\n    <button type=\"button\" class=\"govuk-button govuk-button--secondary govuk-password-input__toggle govuk-js-password-input-toggle\" data-module=\"govuk-button\" aria-controls=\"with-classes\" aria-label=\"Show password\" hidden>\n      Show\n    </button>\n  </div>\n</div>"
+        },
+        {
+          "name": "id",
+          "options": {
+            "id": "password-id",
+            "name": "testing-name",
+            "label": {
+              "text": "With custom id"
+            }
+          },
+          "hidden": true,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group govuk-password-input\" data-module=\"govuk-password-input\">\n  <label class=\"govuk-label\" for=\"password-id\">\n    With custom id\n  </label>\n  <div class=\"govuk-input__wrapper govuk-password-input__wrapper\">\n    <input class=\"govuk-input govuk-password-input__input govuk-js-password-input-input\" id=\"password-id\" name=\"testing-name\" type=\"password\" spellcheck=\"false\" autocomplete=\"current-password\" autocapitalize=\"none\">\n    <button type=\"button\" class=\"govuk-button govuk-button--secondary govuk-password-input__toggle govuk-js-password-input-toggle\" data-module=\"govuk-button\" aria-controls=\"password-id\" aria-label=\"Show password\" hidden>\n      Show\n    </button>\n  </div>\n</div>"
         },
         {
           "name": "value",
@@ -13532,8 +13829,8 @@
         {
           "name": "id",
           "type": "string",
-          "required": true,
-          "description": "ID for each select box."
+          "required": false,
+          "description": "ID for the select box. Defaults to the value of `name`."
         },
         {
           "name": "name",
@@ -13695,7 +13992,6 @@
         {
           "name": "default",
           "options": {
-            "id": "select-1",
             "name": "select-1",
             "label": {
               "text": "Label text goes here"
@@ -13722,6 +14018,22 @@
           "previewLayoutModifiers": [],
           "screenshot": false,
           "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"select-1\">\n    Label text goes here\n  </label>\n  <select class=\"govuk-select\" id=\"select-1\" name=\"select-1\">\n    <option value=\"1\">GOV.UK frontend option 1</option>\n    <option value=\"2\" selected>GOV.UK frontend option 2</option>\n    <option value=\"3\" disabled>GOV.UK frontend option 3</option>\n  </select>\n</div>"
+        },
+        {
+          "name": "id",
+          "options": {
+            "id": "select-id",
+            "name": "test-name",
+            "label": {
+              "text": "Horse with no name"
+            },
+            "items": []
+          },
+          "hidden": false,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"select-id\">\n    Horse with no name\n  </label>\n  <select class=\"govuk-select\" id=\"select-id\" name=\"test-name\">\n  </select>\n</div>"
         },
         {
           "name": "with no items",
@@ -16436,6 +16748,148 @@
           "html": "<div class=\"govuk-summary-card\">\n  <div class=\"govuk-summary-card__title-wrapper\">\n    <h2 class=\"govuk-summary-card__title\">\n      Undergraduate teaching assistant\n    </h2>\n    <ul class=\"govuk-summary-card__actions\">\n      <li class=\"govuk-summary-card__action\">\n        <a class=\"govuk-link\" href=\"#\">Delete job history<span class=\"govuk-visually-hidden\"> (Undergraduate teaching assistant)</span></a>\n      </li>\n      <li class=\"govuk-summary-card__action\">\n        <a class=\"govuk-link\" href=\"#\">Withdraw job history<span class=\"govuk-visually-hidden\"> (Undergraduate teaching assistant)</span></a>\n      </li>\n    </ul>\n  </div>\n\n  <div class=\"govuk-summary-card__content\">\n    <dl class=\"govuk-summary-list\">\n      <div class=\"govuk-summary-list__row\">\n        <dt class=\"govuk-summary-list__key\">\n          Name\n        </dt>\n        <dd class=\"govuk-summary-list__value\">\n          Firstname Lastname\n        </dd>\n        <dd class=\"govuk-summary-list__actions\">\n          <ul class=\"govuk-summary-list__actions-list\">\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Edit<span class=\"govuk-visually-hidden\"> name (Undergraduate teaching assistant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Delete<span class=\"govuk-visually-hidden\"> name (Undergraduate teaching assistant)</span></a>\n            </li>\n          </ul>\n        </dd>\n      </div>\n      <div class=\"govuk-summary-list__row\">\n        <dt class=\"govuk-summary-list__key\">\n          Date of birth\n        </dt>\n        <dd class=\"govuk-summary-list__value\">\n          13/08/1980\n        </dd>\n        <dd class=\"govuk-summary-list__actions\">\n          <a class=\"govuk-link\" href=\"#\">Change<span class=\"govuk-visually-hidden\"> date of birth (Undergraduate teaching assistant)</span></a>\n        </dd>\n      </div>\n    </dl>\n  </div>\n</div>"
         },
         {
+          "name": "as a summary card extreme",
+          "options": {
+            "card": {
+              "title": {
+                "text": "Senior mid-level customer experience enhancement consultant"
+              },
+              "actions": {
+                "items": [
+                  {
+                    "text": "Bop it",
+                    "href": "#"
+                  },
+                  {
+                    "text": "Twist it",
+                    "href": "#"
+                  },
+                  {
+                    "text": "Pull it",
+                    "href": "#"
+                  },
+                  {
+                    "text": "Flick it",
+                    "href": "#"
+                  },
+                  {
+                    "text": "Spin it",
+                    "href": "#"
+                  },
+                  {
+                    "text": "Shout it",
+                    "href": "#"
+                  },
+                  {
+                    "text": "Shake it",
+                    "href": "#"
+                  }
+                ]
+              }
+            },
+            "rows": [
+              {
+                "key": {
+                  "text": "Name"
+                },
+                "value": {
+                  "text": "Barnaby Marmaduke Aloysius Benjy Cobweb Dartagnan Egbert Felix Gaspar Humbert Ignatius Jayden Kasper Leroy Maximilian Neddy Obiajulu Pepin Quilliam Rosencrantz Sexton Teddy Upwood Vivatma Wayland Xylon Yardley Zachary Usansky"
+                },
+                "actions": {
+                  "items": [
+                    {
+                      "href": "#",
+                      "text": "Buy"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Use"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Break"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Fix"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Trash"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Change"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Mail"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Upgrade"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Charge"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Point"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Zoom"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Press"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Snap"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Work"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Quick"
+                    },
+                    {
+                      "href": "#",
+                      "text": "Erase"
+                    }
+                  ]
+                }
+              },
+              {
+                "key": {
+                  "text": "Long website address"
+                },
+                "value": {
+                  "html": "<a class=\"govuk-link\" href=\"https://cs.wikipedia.org/wiki/Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch\">https://cs.wikipedia.org/wiki/Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch</a>\n"
+                },
+                "actions": {
+                  "items": [
+                    {
+                      "href": "#",
+                      "text": "Change",
+                      "visuallyHiddenText": "long website address"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "hidden": false,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-summary-card\">\n  <div class=\"govuk-summary-card__title-wrapper\">\n    <h2 class=\"govuk-summary-card__title\">\n      Senior mid-level customer experience enhancement consultant\n    </h2>\n    <ul class=\"govuk-summary-card__actions\">\n      <li class=\"govuk-summary-card__action\">\n        <a class=\"govuk-link\" href=\"#\">Bop it<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n      </li>\n      <li class=\"govuk-summary-card__action\">\n        <a class=\"govuk-link\" href=\"#\">Twist it<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n      </li>\n      <li class=\"govuk-summary-card__action\">\n        <a class=\"govuk-link\" href=\"#\">Pull it<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n      </li>\n      <li class=\"govuk-summary-card__action\">\n        <a class=\"govuk-link\" href=\"#\">Flick it<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n      </li>\n      <li class=\"govuk-summary-card__action\">\n        <a class=\"govuk-link\" href=\"#\">Spin it<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n      </li>\n      <li class=\"govuk-summary-card__action\">\n        <a class=\"govuk-link\" href=\"#\">Shout it<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n      </li>\n      <li class=\"govuk-summary-card__action\">\n        <a class=\"govuk-link\" href=\"#\">Shake it<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n      </li>\n    </ul>\n  </div>\n\n  <div class=\"govuk-summary-card__content\">\n    <dl class=\"govuk-summary-list\">\n      <div class=\"govuk-summary-list__row\">\n        <dt class=\"govuk-summary-list__key\">\n          Name\n        </dt>\n        <dd class=\"govuk-summary-list__value\">\n          Barnaby Marmaduke Aloysius Benjy Cobweb Dartagnan Egbert Felix Gaspar Humbert Ignatius Jayden Kasper Leroy Maximilian Neddy Obiajulu Pepin Quilliam Rosencrantz Sexton Teddy Upwood Vivatma Wayland Xylon Yardley Zachary Usansky\n        </dd>\n        <dd class=\"govuk-summary-list__actions\">\n          <ul class=\"govuk-summary-list__actions-list\">\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Buy<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Use<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Break<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Fix<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Trash<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Change<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Mail<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Upgrade<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Charge<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Point<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Zoom<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Press<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Snap<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Work<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Quick<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n            <li class=\"govuk-summary-list__actions-list-item\">\n              <a class=\"govuk-link\" href=\"#\">Erase<span class=\"govuk-visually-hidden\"> (Senior mid-level customer experience enhancement consultant)</span></a>\n            </li>\n          </ul>\n        </dd>\n      </div>\n      <div class=\"govuk-summary-list__row\">\n        <dt class=\"govuk-summary-list__key\">\n          Long website address\n        </dt>\n        <dd class=\"govuk-summary-list__value\">\n          <a class=\"govuk-link\" href=\"https://cs.wikipedia.org/wiki/Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch\">https://cs.wikipedia.org/wiki/Llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogoch</a>\n        </dd>\n        <dd class=\"govuk-summary-list__actions\">\n          <a class=\"govuk-link\" href=\"#\">Change<span class=\"govuk-visually-hidden\"> long website address (Senior mid-level customer experience enhancement consultant)</span></a>\n        </dd>\n      </div>\n    </dl>\n  </div>\n</div>"
+        },
+        {
           "name": "attributes",
           "options": {
             "rows": [
@@ -19017,8 +19471,8 @@
         {
           "name": "id",
           "type": "string",
-          "required": true,
-          "description": "The ID of the textarea."
+          "required": false,
+          "description": "The ID of the textarea. Defaults to the value of `name`."
         },
         {
           "name": "name",
@@ -19161,7 +19615,6 @@
           "name": "default",
           "options": {
             "name": "more-detail",
-            "id": "more-detail",
             "label": {
               "text": "Can you provide more detail?"
             }
@@ -19322,6 +19775,21 @@
           "previewLayoutModifiers": [],
           "screenshot": false,
           "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"textarea-with-spellcheck-disabled\">\n    Spellcheck is disabled\n  </label>\n  <textarea class=\"govuk-textarea\" id=\"textarea-with-spellcheck-disabled\" name=\"spellcheck\" rows=\"5\" spellcheck=\"false\"></textarea>\n</div>"
+        },
+        {
+          "name": "id",
+          "options": {
+            "id": "textarea-id",
+            "name": "test-name",
+            "label": {
+              "text": "With custom id"
+            }
+          },
+          "hidden": true,
+          "description": "",
+          "previewLayoutModifiers": [],
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"textarea-id\">\n    With custom id\n  </label>\n  <textarea class=\"govuk-textarea\" id=\"textarea-id\" name=\"test-name\" rows=\"5\"></textarea>\n</div>"
         },
         {
           "name": "classes",

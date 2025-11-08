@@ -311,7 +311,7 @@ export const characterCountCountMessageSchema = characterCountCountMessageFormSc
 export const characterCountFormSchema = joi
   .object()
   .keys({
-    id: joi.string().required().label('Id'),
+    id: joi.string().allow('').label('Id'),
     name: joi.string().required().label('Name'),
     rows: joi.number().integer().empty('').label('Rows'),
     value: joi.string().allow('').label('Value'),
@@ -721,10 +721,17 @@ export const fileUploadFormSchema = joi
   .object()
   .keys({
     name: joi.string().required().label('Name'),
-    id: joi.string().required().label('Id'),
+    id: joi.string().allow('').label('Id'),
     value: joi.string().allow('').label('Value'),
     disabled: joi.boolean().label('Disabled'),
+    multiple: joi.boolean().label('Multiple'),
     describedBy: joi.string().allow('').label('Described by'),
+    javascript: joi.boolean().label('Javascript'),
+    chooseFilesButtonText: joi.string().allow('').label('Choose files button text'),
+    dropInstructionText: joi.string().allow('').label('Drop instruction text'),
+    noFileChosenText: joi.string().allow('').label('No file chosen text'),
+    enteredDropZoneText: joi.string().allow('').label('Entered drop zone text'),
+    leftDropZoneText: joi.string().allow('').label('Left drop zone text'),
     classes: joi.string().allow('').label('Classes')
   })
 
@@ -735,6 +742,7 @@ export const fileUploadSchema = fileUploadFormSchema
     hint: hintSchema.label('Hint'),
     errorMessage: errorMessageSchema.label('Error message'),
     formGroup: fileUploadFormGroupSchema.label('Form group'),
+    multipleFilesChosenText: joi.object().label('Multiple files chosen text'),
     attributes: joi.object().label('Attributes')
   })
   .description('FileUpload schema')
@@ -977,7 +985,7 @@ export const inputInputWrapperSchema = inputInputWrapperFormSchema
 export const inputFormSchema = joi
   .object()
   .keys({
-    id: joi.string().required().label('Id'),
+    id: joi.string().allow('').label('Id'),
     name: joi.string().required().label('Name'),
     type: joi.string().allow('').label('Type'),
     inputmode: joi.string().allow('').label('Inputmode'),
@@ -1192,7 +1200,7 @@ export const passwordInputButtonSchema = passwordInputButtonFormSchema
 export const passwordInputFormSchema = joi
   .object()
   .keys({
-    id: joi.string().required().label('Id'),
+    id: joi.string().allow('').label('Id'),
     name: joi.string().required().label('Name'),
     value: joi.string().allow('').label('Value'),
     disabled: joi.boolean().label('Disabled'),
@@ -1408,7 +1416,7 @@ export const selectFormGroupSchema = selectFormGroupFormSchema
 export const selectFormSchema = joi
   .object()
   .keys({
-    id: joi.string().required().label('Id'),
+    id: joi.string().allow('').label('Id'),
     name: joi.string().required().label('Name'),
     value: joi.string().allow('').label('Value'),
     disabled: joi.boolean().label('Disabled'),
@@ -1881,7 +1889,7 @@ export const textareaFormGroupSchema = textareaFormGroupFormSchema
 export const textareaFormSchema = joi
   .object()
   .keys({
-    id: joi.string().required().label('Id'),
+    id: joi.string().allow('').label('Id'),
     name: joi.string().required().label('Name'),
     spellcheck: joi.boolean().label('Spellcheck'),
     rows: joi.number().integer().empty('').label('Rows'),

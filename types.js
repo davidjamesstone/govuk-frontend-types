@@ -77,7 +77,7 @@
 /**
  * Button component config
  * @typedef {object} Button
- * @property {string} [element] - HTML element for the button component – `input`, `button` or `a`. In most cases you will not need to set this as it will be configured automatically if `href` is provided. This parameter will be removed in the next major version.
+ * @property {string} [element] - HTML element for the button component – `input`, `button` or `a`. In most cases you will not need to set this as it will be configured automatically if `href` is provided.
  * @property {string} text - If `html` is set, this is not required. Text for the `input`, `button` or `a` element. If `html` is provided, the `text` option will be ignored and `element` will be automatically set to `"button"` unless `href` is also set, or it has already been defined.
  * @property {string} html - If `text` is set, this is not required. HTML for the `button` or `a` element only. If `html` is provided, the `text` option will be ignored and `element` will be automatically set to `"button"` unless `href` is also set, or it has already been defined. This option has no effect if `element` is set to `"input"`.
  * @property {string} [name] - Name for the `input` or `button`. This has no effect on `a` elements.
@@ -124,7 +124,7 @@
 /**
  * CharacterCount component config
  * @typedef {object} CharacterCount
- * @property {string} id - The ID of the textarea.
+ * @property {string} [id] - The ID of the textarea. Defaults to the value of `name`.
  * @property {string} name - The name of the textarea, which is submitted with the form data.
  * @property {number} [rows] - Optional number of textarea rows (default is 5 rows).
  * @property {string} [value] - Optional initial value of the textarea.
@@ -412,14 +412,22 @@
  * FileUpload component config
  * @typedef {object} FileUpload
  * @property {string} name - The name of the input, which is submitted with the form data.
- * @property {string} id - The ID of the input.
- * @property {string} [value] - Deprecated. Optional initial value of the input.
+ * @property {string} [id] - The ID of the input. Defaults to the value of `name`.
+ * @property {string} [value] - Optional initial value of the input.
  * @property {boolean} [disabled] - If `true`, file input will be disabled.
+ * @property {boolean} [multiple] - If `true`, a user may select multiple files at the same time. The exact mechanism to do this differs depending on operating system.
  * @property {string} [describedBy] - One or more element IDs to add to the `aria-describedby` attribute, used to provide additional descriptive information for screenreader users.
  * @property {Label} label - The label used by the file upload component.
  * @property {Hint} [hint] - Can be used to add a hint to the file upload component.
  * @property {ErrorMessage} [errorMessage] - Can be used to add an error message to the file upload component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`.
  * @property {FileUploadFormGroup} [formGroup] - Additional options for the form group containing the file upload component.
+ * @property {boolean} [javascript] - Can be used to enable JavaScript enhancements for the component.
+ * @property {string} [chooseFilesButtonText] - The text of the button that opens the file picker. Default is `"Choose file"`. If `javascript` is not provided, this option will be ignored.
+ * @property {string} [dropInstructionText] - The text informing users they can drop files. Default is `"or drop file"`. If `javascript` is not provided, this option will be ignored.
+ * @property {object} [multipleFilesChosenText] - The text displayed when multiple files have been chosen by the user. The component will replace the `%{count}` placeholder with the number of files selected. [Our pluralisation rules apply to this macro option](https://frontend.design-system.service.gov.uk/localise-govuk-frontend/#understanding-pluralisation-rules). If `javascript` is not provided, this option will be ignored.
+ * @property {string} [noFileChosenText] - The text displayed when no file has been chosen by the user. Default is `"No file chosen"`. If `javascript` is not provided, this option will be ignored.
+ * @property {string} [enteredDropZoneText] - The text announced by assistive technology when user drags files and enters the drop zone. Default is `"Entered drop zone"`. If `javascript` is not provided, this option will be ignored.
+ * @property {string} [leftDropZoneText] - The text announced by assistive technology when user drags files and leaves the drop zone without dropping. Default is `"Left drop zone"`. If `javascript` is not provided, this option will be ignored.
  * @property {string} [classes] - Classes to add to the file upload component.
  * @property {object} [attributes] - HTML attributes (for example data attributes) to add to the file upload component.
  */
@@ -509,7 +517,7 @@
  * @property {string} [containerClasses] - Classes for the container, useful if you want to make the header fixed width.
  * @property {string} [classes] - Classes to add to the header container.
  * @property {object} [attributes] - HTML attributes (for example data attributes) to add to the header container.
- * @property {boolean} [useTudorCrown] - Deprecated. If `true`, uses the Tudor crown from King Charles III's royal cypher. Otherwise, uses the St. Edward's crown. Default is `true`.
+ * @property {boolean} [useTudorCrown] - If `true`, uses the Tudor crown from King Charles III's royal cypher. Otherwise, uses the St. Edward's crown. Default is `true`.
  */
 
 /**
@@ -573,7 +581,7 @@
 /**
  * Input component config
  * @typedef {object} Input
- * @property {string} id - The ID of the input.
+ * @property {string} [id] - The ID of the input. Defaults to the value of `name`.
  * @property {string} name - The name of the input, which is submitted with the form data.
  * @property {string} [type] - Type of input control to render, for example, a password input control. Defaults to `"text"`.
  * @property {string} [inputmode] - Optional value for [the inputmode attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode).
@@ -721,7 +729,7 @@
 /**
  * PasswordInput component config
  * @typedef {object} PasswordInput
- * @property {string} id - The ID of the input.
+ * @property {string} [id] - The ID of the input. Defaults to the value of `name`.
  * @property {string} name - The name of the input, which is submitted with the form data.
  * @property {string} [value] - Optional initial value of the input.
  * @property {boolean} [disabled] - If `true`, input will be disabled.
@@ -855,7 +863,7 @@
 /**
  * Select component config
  * @typedef {object} Select
- * @property {string} id - ID for each select box.
+ * @property {string} [id] - ID for the select box. Defaults to the value of `name`.
  * @property {string} name - Name property for the select.
  * @property {SelectItem[]} items - The items within the select component.
  * @property {string} [value] - Value for the option which should be selected. Use this as an alternative to setting the `selected` option on each individual item.
@@ -1146,7 +1154,7 @@
 /**
  * Textarea component config
  * @typedef {object} Textarea
- * @property {string} id - The ID of the textarea.
+ * @property {string} [id] - The ID of the textarea. Defaults to the value of `name`.
  * @property {string} name - The name of the textarea, which is submitted with the form data.
  * @property {boolean} [spellcheck] - Optional field to enable or disable the `spellcheck` attribute on the textarea.
  * @property {number} [rows] - Optional number of textarea rows (default is 5 rows).

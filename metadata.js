@@ -348,7 +348,7 @@ export const button = {
   formSchemaName: 'buttonFormSchema',
   title: 'Button',
   keys: [
-    { name: 'element', type: 'string', title: 'Element', hint: `HTML element for the button component – \`input\`, \`button\` or \`a\`. In most cases you will not need to set this as it will be configured automatically if \`href\` is provided. This parameter will be removed in the next major version.`, required: false, isComponent: false },
+    { name: 'element', type: 'string', title: 'Element', hint: `HTML element for the button component – \`input\`, \`button\` or \`a\`. In most cases you will not need to set this as it will be configured automatically if \`href\` is provided.`, required: false, isComponent: false },
     { name: 'text', type: 'string', title: 'Text', hint: `If \`html\` is set, this is not required. Text for the \`input\`, \`button\` or \`a\` element. If \`html\` is provided, the \`text\` option will be ignored and \`element\` will be automatically set to \`"button"\` unless \`href\` is also set, or it has already been defined.`, required: true, isComponent: false },
     { name: 'html', type: 'string', title: 'Html', hint: `If \`text\` is set, this is not required. HTML for the \`button\` or \`a\` element only. If \`html\` is provided, the \`text\` option will be ignored and \`element\` will be automatically set to \`"button"\` unless \`href\` is also set, or it has already been defined. This option has no effect if \`element\` is set to \`"input"\`.`, required: true, isComponent: false },
     { name: 'name', type: 'string', title: 'Name', hint: `Name for the \`input\` or \`button\`. This has no effect on \`a\` elements.`, required: false, isComponent: false },
@@ -456,7 +456,7 @@ export const characterCount = {
   formSchemaName: 'characterCountFormSchema',
   title: 'Character count',
   keys: [
-    { name: 'id', type: 'string', title: 'Id', hint: `The ID of the textarea.`, required: true, isComponent: false },
+    { name: 'id', type: 'string', title: 'Id', hint: `The ID of the textarea. Defaults to the value of \`name\`.`, required: false, isComponent: false },
     { name: 'name', type: 'string', title: 'Name', hint: `The name of the textarea, which is submitted with the form data.`, required: true, isComponent: false },
     { name: 'rows', type: 'string', title: 'Rows', hint: `Optional number of textarea rows (default is 5 rows).`, required: false, isComponent: false },
     { name: 'value', type: 'string', title: 'Value', hint: `Optional initial value of the textarea.`, required: false, isComponent: false },
@@ -1008,14 +1008,22 @@ export const fileUpload = {
   title: 'File upload',
   keys: [
     { name: 'name', type: 'string', title: 'Name', hint: `The name of the input, which is submitted with the form data.`, required: true, isComponent: false },
-    { name: 'id', type: 'string', title: 'Id', hint: `The ID of the input.`, required: true, isComponent: false },
-    { name: 'value', type: 'string', title: 'Value', hint: `Deprecated. Optional initial value of the input.`, required: false, isComponent: false },
+    { name: 'id', type: 'string', title: 'Id', hint: `The ID of the input. Defaults to the value of \`name\`.`, required: false, isComponent: false },
+    { name: 'value', type: 'string', title: 'Value', hint: `Optional initial value of the input.`, required: false, isComponent: false },
     { name: 'disabled', type: 'boolean', title: 'Disabled', hint: `If \`true\`, file input will be disabled.`, required: false, isComponent: false },
+    { name: 'multiple', type: 'boolean', title: 'Multiple', hint: `If \`true\`, a user may select multiple files at the same time. The exact mechanism to do this differs depending on operating system.`, required: false, isComponent: false },
     { name: 'describedBy', type: 'string', title: 'Described by', hint: `One or more element IDs to add to the \`aria-describedby\` attribute, used to provide additional descriptive information for screenreader users.`, required: false, isComponent: false },
     { name: 'label', type: 'object', title: 'Label', hint: `The label used by the file upload component.`, required: true, isComponent: true, subType: label },
     { name: 'hint', type: 'object', title: 'Hint', hint: `Can be used to add a hint to the file upload component.`, required: false, isComponent: true, subType: hint },
     { name: 'errorMessage', type: 'object', title: 'Error message', hint: `Can be used to add an error message to the file upload component. The error message component will not display if you use a falsy value for \`errorMessage\`, for example \`false\` or \`null\`.`, required: false, isComponent: true, subType: errorMessage },
     { name: 'formGroup', type: 'object', title: 'Form group', hint: `Additional options for the form group containing the file upload component.`, required: false, isComponent: false, subType: fileUploadFormGroup },
+    { name: 'javascript', type: 'boolean', title: 'Javascript', hint: `Can be used to enable JavaScript enhancements for the component.`, required: false, isComponent: false },
+    { name: 'chooseFilesButtonText', type: 'string', title: 'Choose files button text', hint: `The text of the button that opens the file picker. Default is \`"Choose file"\`. If \`javascript\` is not provided, this option will be ignored.`, required: false, isComponent: false },
+    { name: 'dropInstructionText', type: 'string', title: 'Drop instruction text', hint: `The text informing users they can drop files. Default is \`"or drop file"\`. If \`javascript\` is not provided, this option will be ignored.`, required: false, isComponent: false },
+    { name: 'multipleFilesChosenText', type: 'object', title: 'Multiple files chosen text', hint: `The text displayed when multiple files have been chosen by the user. The component will replace the \`%{count}\` placeholder with the number of files selected. [Our pluralisation rules apply to this macro option](https://frontend.design-system.service.gov.uk/localise-govuk-frontend/#understanding-pluralisation-rules). If \`javascript\` is not provided, this option will be ignored.`, required: false, isComponent: false },
+    { name: 'noFileChosenText', type: 'string', title: 'No file chosen text', hint: `The text displayed when no file has been chosen by the user. Default is \`"No file chosen"\`. If \`javascript\` is not provided, this option will be ignored.`, required: false, isComponent: false },
+    { name: 'enteredDropZoneText', type: 'string', title: 'Entered drop zone text', hint: `The text announced by assistive technology when user drags files and enters the drop zone. Default is \`"Entered drop zone"\`. If \`javascript\` is not provided, this option will be ignored.`, required: false, isComponent: false },
+    { name: 'leftDropZoneText', type: 'string', title: 'Left drop zone text', hint: `The text announced by assistive technology when user drags files and leaves the drop zone without dropping. Default is \`"Left drop zone"\`. If \`javascript\` is not provided, this option will be ignored.`, required: false, isComponent: false },
     { name: 'classes', type: 'string', title: 'Classes', hint: `Classes to add to the file upload component.`, required: false, isComponent: false },
     { name: 'attributes', type: 'object', title: 'Attributes', hint: `HTML attributes (for example data attributes) to add to the file upload component.`, required: false, isComponent: false }
   ],
@@ -1216,7 +1224,7 @@ export const header = {
     { name: 'containerClasses', type: 'string', title: 'Container classes', hint: `Classes for the container, useful if you want to make the header fixed width.`, required: false, isComponent: false },
     { name: 'classes', type: 'string', title: 'Classes', hint: `Classes to add to the header container.`, required: false, isComponent: false },
     { name: 'attributes', type: 'object', title: 'Attributes', hint: `HTML attributes (for example data attributes) to add to the header container.`, required: false, isComponent: false },
-    { name: 'useTudorCrown', type: 'boolean', title: 'Use tudor crown', hint: `Deprecated. If \`true\`, uses the Tudor crown from King Charles III's royal cypher. Otherwise, uses the St. Edward's crown. Default is \`true\`.`, required: false, isComponent: false }
+    { name: 'useTudorCrown', type: 'boolean', title: 'Use tudor crown', hint: `If \`true\`, uses the Tudor crown from King Charles III's royal cypher. Otherwise, uses the St. Edward's crown. Default is \`true\`.`, required: false, isComponent: false }
   ],
   component: {
     id: 'header',
@@ -1353,7 +1361,7 @@ export const input = {
   formSchemaName: 'inputFormSchema',
   title: 'Input',
   keys: [
-    { name: 'id', type: 'string', title: 'Id', hint: `The ID of the input.`, required: true, isComponent: false },
+    { name: 'id', type: 'string', title: 'Id', hint: `The ID of the input. Defaults to the value of \`name\`.`, required: false, isComponent: false },
     { name: 'name', type: 'string', title: 'Name', hint: `The name of the input, which is submitted with the form data.`, required: true, isComponent: false },
     { name: 'type', type: 'string', title: 'Type', hint: `Type of input control to render, for example, a password input control. Defaults to \`"text"\`.`, required: false, isComponent: false },
     { name: 'inputmode', type: 'string', title: 'Inputmode', hint: `Optional value for [the inputmode attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode).`, required: false, isComponent: false },
@@ -1653,7 +1661,7 @@ export const passwordInput = {
   formSchemaName: 'passwordInputFormSchema',
   title: 'Password input',
   keys: [
-    { name: 'id', type: 'string', title: 'Id', hint: `The ID of the input.`, required: true, isComponent: false },
+    { name: 'id', type: 'string', title: 'Id', hint: `The ID of the input. Defaults to the value of \`name\`.`, required: false, isComponent: false },
     { name: 'name', type: 'string', title: 'Name', hint: `The name of the input, which is submitted with the form data.`, required: true, isComponent: false },
     { name: 'value', type: 'string', title: 'Value', hint: `Optional initial value of the input.`, required: false, isComponent: false },
     { name: 'disabled', type: 'boolean', title: 'Disabled', hint: `If \`true\`, input will be disabled.`, required: false, isComponent: false },
@@ -1948,7 +1956,7 @@ export const select = {
   formSchemaName: 'selectFormSchema',
   title: 'Select',
   keys: [
-    { name: 'id', type: 'string', title: 'Id', hint: `ID for each select box.`, required: true, isComponent: false },
+    { name: 'id', type: 'string', title: 'Id', hint: `ID for the select box. Defaults to the value of \`name\`.`, required: false, isComponent: false },
     { name: 'name', type: 'string', title: 'Name', hint: `Name property for the select.`, required: true, isComponent: false },
     { name: 'items', type: 'array', title: 'Items', hint: `The items within the select component.`, required: true, isComponent: false, subType: selectItem },
     { name: 'value', type: 'string', title: 'Value', hint: `Value for the option which should be selected. Use this as an alternative to setting the \`selected\` option on each individual item.`, required: false, isComponent: false },
@@ -2591,7 +2599,7 @@ export const textarea = {
   formSchemaName: 'textareaFormSchema',
   title: 'Textarea',
   keys: [
-    { name: 'id', type: 'string', title: 'Id', hint: `The ID of the textarea.`, required: true, isComponent: false },
+    { name: 'id', type: 'string', title: 'Id', hint: `The ID of the textarea. Defaults to the value of \`name\`.`, required: false, isComponent: false },
     { name: 'name', type: 'string', title: 'Name', hint: `The name of the textarea, which is submitted with the form data.`, required: true, isComponent: false },
     { name: 'spellcheck', type: 'boolean', title: 'Spellcheck', hint: `Optional field to enable or disable the \`spellcheck\` attribute on the textarea.`, required: false, isComponent: false },
     { name: 'rows', type: 'string', title: 'Rows', hint: `Optional number of textarea rows (default is 5 rows).`, required: false, isComponent: false },
