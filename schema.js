@@ -1481,6 +1481,7 @@ export const serviceNavigationFormSchema = joi
     navigationLabel: joi.string().allow('').label('Navigation label'),
     navigationId: joi.string().allow('').label('Navigation id'),
     navigationClasses: joi.string().allow('').label('Navigation classes'),
+    collapseNavigationOnMobile: joi.boolean().label('Collapse navigation on mobile'),
     serviceName: joi.string().allow('').label('Service name'),
     serviceUrl: joi.string().allow('').label('Service url')
   })

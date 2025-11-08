@@ -910,6 +910,7 @@
  * @property {string} [navigationLabel] - The screen reader label for the mobile navigation menu. Defaults to the same value as `menuButtonText` if not specified.
  * @property {string} [navigationId] - The ID used to associate the mobile navigation toggle with the navigation menu. Defaults to `navigation`.
  * @property {string} [navigationClasses] - Classes to add to the navigation menu container.
+ * @property {boolean} [collapseNavigationOnMobile] - Whether the navigation should be collapsed inside a menu on mobile. Defaults to true if there is more than one navigation item.
  * @property {string} [serviceName] - The name of your service.
  * @property {string} [serviceUrl] - The homepage of your service.
  * @property {ServiceNavigationNavigation[]} navigation - Used to add navigation to the service header.

@@ -2042,6 +2042,7 @@ export const serviceNavigation = {
     { name: 'navigationLabel', type: 'string', title: 'Navigation label', hint: `The screen reader label for the mobile navigation menu. Defaults to the same value as \`menuButtonText\` if not specified.`, required: false, isComponent: false },
     { name: 'navigationId', type: 'string', title: 'Navigation id', hint: `The ID used to associate the mobile navigation toggle with the navigation menu. Defaults to \`navigation\`.`, required: false, isComponent: false },
     { name: 'navigationClasses', type: 'string', title: 'Navigation classes', hint: `Classes to add to the navigation menu container.`, required: false, isComponent: false },
+    { name: 'collapseNavigationOnMobile', type: 'boolean', title: 'Collapse navigation on mobile', hint: `Whether the navigation should be collapsed inside a menu on mobile. Defaults to true if there is more than one navigation item.`, required: false, isComponent: false },
     { name: 'serviceName', type: 'string', title: 'Service name', hint: `The name of your service.`, required: false, isComponent: false },
     { name: 'serviceUrl', type: 'string', title: 'Service url', hint: `The homepage of your service.`, required: false, isComponent: false },
     { name: 'navigation', type: 'array', title: 'Navigation', hint: `Used to add navigation to the service header.`, required: true, isComponent: false, subType: serviceNavigationNavigation },
