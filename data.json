@@ -2332,7 +2332,7 @@
           "name": "attributes",
           "type": "object",
           "required": false,
-          "description": "HTML attributes (for example data attributes) to add to the anchor tag."
+          "description": "HTML attributes (for example data attributes) to add to the checkboxes container."
         }
       ],
       "examples": [
@@ -6772,6 +6772,23 @@
           "html": "<div class=\"govuk-form-group govuk-form-group--error\">\n  <label class=\"govuk-label\" for=\"file-upload-3\">\n    Upload a file\n  </label>\n  <div id=\"file-upload-3-hint\" class=\"govuk-hint\">\n    Your photo may be in your Pictures, Photos, Downloads or Desktop folder. Or in an app like iPhoto.\n  </div>\n  <p id=\"file-upload-3-error\" class=\"govuk-error-message\">\n    <span class=\"govuk-visually-hidden\">Error:</span> Error message goes here\n  </p>\n  <div\n    class=\"govuk-drop-zone\"\n    data-module=\"govuk-file-upload\">\n  <input class=\"govuk-file-upload govuk-file-upload--error\" id=\"file-upload-3\" name=\"file-upload-3\" type=\"file\" aria-describedby=\"file-upload-3-hint file-upload-3-error\">\n  </div>\n</div>"
         },
         {
+          "name": "enhanced, multiple files",
+          "options": {
+            "javascript": true,
+            "id": "file-upload-3",
+            "name": "file-upload-3",
+            "label": {
+              "text": "Upload files"
+            },
+            "multiple": true
+          },
+          "hidden": false,
+          "description": "",
+          "pageTemplateOptions": {},
+          "screenshot": false,
+          "html": "<div class=\"govuk-form-group\">\n  <label class=\"govuk-label\" for=\"file-upload-3\">\n    Upload files\n  </label>\n  <div\n    class=\"govuk-drop-zone\"\n    data-module=\"govuk-file-upload\">\n  <input class=\"govuk-file-upload\" id=\"file-upload-3\" name=\"file-upload-3\" type=\"file\" multiple>\n  </div>\n</div>"
+        },
+        {
           "name": "with value",
           "options": {
             "id": "file-upload-4",
@@ -10842,7 +10859,7 @@
           "description": "",
           "pageTemplateOptions": {},
           "screenshot": false,
-          "html": "<nav class=\"govuk-pagination\" aria-label=\"Pagination\">\n  <div class=\"govuk-pagination__prev\">\n    <a class=\"govuk-link govuk-pagination__link\" href=\"/previous\" rel=\"prev\">\n      <svg class=\"govuk-pagination__icon govuk-pagination__icon--prev\" xmlns=\"http://www.w3.org/2000/svg\" height=\"13\" width=\"15\" aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 15 13\">\n        <path d=\"m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z\"></path>\n      </svg>\n      <span class=\"govuk-pagination__link-title\">\n        Previous<span class=\"govuk-visually-hidden\"> page</span>\n      </span>\n    </a>\n  </div>\n  <ul class=\"govuk-pagination__list\">\n    <li class=\"govuk-pagination__item\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/1\" aria-label=\"Page 1\">\n        1\n      </a>\n    </li>\n    <li class=\"govuk-pagination__item govuk-pagination__item--ellipses\">\n      &ctdot;\n    </li>\n    <li class=\"govuk-pagination__item\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/8\" aria-label=\"Page 8\">\n        8\n      </a>\n    </li>\n    <li class=\"govuk-pagination__item\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/9\" aria-label=\"Page 9\">\n        9\n      </a>\n    </li>\n    <li class=\"govuk-pagination__item govuk-pagination__item--current\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/10\" aria-label=\"Page 10\" aria-current=\"page\">\n        10\n      </a>\n    </li>\n    <li class=\"govuk-pagination__item\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/11\" aria-label=\"Page 11\">\n        11\n      </a>\n    </li>\n    <li class=\"govuk-pagination__item\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/12\" aria-label=\"Page 12\">\n        12\n      </a>\n    </li>\n    <li class=\"govuk-pagination__item govuk-pagination__item--ellipses\">\n      &ctdot;\n    </li>\n    <li class=\"govuk-pagination__item\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/40\" aria-label=\"Page 40\">\n        40\n      </a>\n    </li>\n  </ul>\n  <div class=\"govuk-pagination__next\">\n    <a class=\"govuk-link govuk-pagination__link\" href=\"/next\" rel=\"next\">\n      <span class=\"govuk-pagination__link-title\">\n        Next<span class=\"govuk-visually-hidden\"> page</span>\n      </span>\n      <svg class=\"govuk-pagination__icon govuk-pagination__icon--next\" xmlns=\"http://www.w3.org/2000/svg\" height=\"13\" width=\"15\" aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 15 13\">\n        <path d=\"m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z\"></path>\n      </svg>\n    </a>\n  </div>\n</nav>"
+          "html": "<nav class=\"govuk-pagination\" aria-label=\"Pagination\">\n  <div class=\"govuk-pagination__prev\">\n    <a class=\"govuk-link govuk-pagination__link\" href=\"/previous\" rel=\"prev\">\n      <svg class=\"govuk-pagination__icon govuk-pagination__icon--prev\" xmlns=\"http://www.w3.org/2000/svg\" height=\"13\" width=\"15\" aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 15 13\">\n        <path d=\"m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z\"></path>\n      </svg>\n      <span class=\"govuk-pagination__link-title\">\n        Previous<span class=\"govuk-visually-hidden\"> page</span>\n      </span>\n    </a>\n  </div>\n  <ul class=\"govuk-pagination__list\">\n    <li class=\"govuk-pagination__item\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/1\" aria-label=\"Page 1\">\n        1\n      </a>\n    </li>\n    <li class=\"govuk-pagination__item govuk-pagination__item--ellipsis\">\n      &ctdot;\n    </li>\n    <li class=\"govuk-pagination__item\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/8\" aria-label=\"Page 8\">\n        8\n      </a>\n    </li>\n    <li class=\"govuk-pagination__item\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/9\" aria-label=\"Page 9\">\n        9\n      </a>\n    </li>\n    <li class=\"govuk-pagination__item govuk-pagination__item--current\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/10\" aria-label=\"Page 10\" aria-current=\"page\">\n        10\n      </a>\n    </li>\n    <li class=\"govuk-pagination__item\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/11\" aria-label=\"Page 11\">\n        11\n      </a>\n    </li>\n    <li class=\"govuk-pagination__item\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/12\" aria-label=\"Page 12\">\n        12\n      </a>\n    </li>\n    <li class=\"govuk-pagination__item govuk-pagination__item--ellipsis\">\n      &ctdot;\n    </li>\n    <li class=\"govuk-pagination__item\">\n      <a class=\"govuk-link govuk-pagination__link\" href=\"/page/40\" aria-label=\"Page 40\">\n        40\n      </a>\n    </li>\n  </ul>\n  <div class=\"govuk-pagination__next\">\n    <a class=\"govuk-link govuk-pagination__link\" href=\"/next\" rel=\"next\">\n      <span class=\"govuk-pagination__link-title\">\n        Next<span class=\"govuk-visually-hidden\"> page</span>\n      </span>\n      <svg class=\"govuk-pagination__icon govuk-pagination__icon--next\" xmlns=\"http://www.w3.org/2000/svg\" height=\"13\" width=\"15\" aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 15 13\">\n        <path d=\"m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z\"></path>\n      </svg>\n    </a>\n  </div>\n</nav>"
         },
         {
           "name": "first page",
@@ -11885,7 +11902,7 @@
               "name": "beforeInputs",
               "type": "object",
               "required": false,
-              "description": "Content to add before all radio items within the checkboxes component.",
+              "description": "Content to add before all radio items within the radios component.",
               "params": [
                 {
                   "name": "text",
@@ -11905,7 +11922,7 @@
               "name": "afterInputs",
               "type": "object",
               "required": false,
-              "description": "Content to add after all radio items within the checkboxes component.",
+              "description": "Content to add after all radio items within the radios component.",
               "params": [
                 {
                   "name": "text",
@@ -12049,7 +12066,7 @@
           "name": "attributes",
           "type": "object",
           "required": false,
-          "description": "HTML attributes (for example data attributes) to add to the radio input tag."
+          "description": "HTML attributes (for example data attributes) to add to the radio container."
         }
       ],
       "examples": [
@@ -18456,6 +18473,52 @@
           "pageTemplateOptions": {},
           "screenshot": false,
           "html": "<ul class=\"govuk-task-list\">\n  <li class=\"govuk-task-list__item govuk-task-list__item--with-link\">\n    <div class=\"govuk-task-list__name-and-hint\">\n      <a class=\"govuk-link govuk-task-list__link\" href=\"#\" aria-describedby=\"task-list-1-status\">\n        Company Directors\n      </a>\n    </div>\n    <div class=\"govuk-task-list__status\" id=\"task-list-1-status\">\n      Completed\n    </div>\n  </li>\n  <li class=\"govuk-task-list__item govuk-task-list__item--with-link\">\n    <div class=\"govuk-task-list__name-and-hint\">\n      <a class=\"govuk-link govuk-task-list__link\" href=\"#\" aria-describedby=\"task-list-2-status\">\n        Registered company details\n      </a>\n    </div>\n    <div class=\"govuk-task-list__status\" id=\"task-list-2-status\">\n      <strong class=\"govuk-tag govuk-tag--blue\">\n        Incomplete\n      </strong>\n    </div>\n  </li>\n  <li class=\"govuk-task-list__item govuk-task-list__item--with-link\">\n    <div class=\"govuk-task-list__name-and-hint\">\n      <a class=\"govuk-link govuk-task-list__link\" href=\"#\" aria-describedby=\"task-list-3-status\">\n        Business plan\n      </a>\n    </div>\n    <div class=\"govuk-task-list__status\" id=\"task-list-3-status\">\n      <strong class=\"govuk-tag govuk-tag--blue\">\n        Incomplete\n      </strong>\n    </div>\n  </li>\n</ul>"
+        },
+        {
+          "name": "forced hover state",
+          "options": {
+            "items": [
+              {
+                "title": {
+                  "text": "Company Directors"
+                },
+                "href": "#",
+                "status": {
+                  "text": "Completed"
+                },
+                "classes": ":hover"
+              },
+              {
+                "title": {
+                  "text": "Registered company details"
+                },
+                "href": "#",
+                "status": {
+                  "tag": {
+                    "text": "Incomplete",
+                    "classes": "govuk-tag--blue"
+                  }
+                }
+              },
+              {
+                "title": {
+                  "text": "Business plan"
+                },
+                "href": "#",
+                "status": {
+                  "tag": {
+                    "text": "Incomplete",
+                    "classes": "govuk-tag--blue"
+                  }
+                }
+              }
+            ]
+          },
+          "hidden": false,
+          "description": "",
+          "pageTemplateOptions": {},
+          "screenshot": false,
+          "html": "<ul class=\"govuk-task-list\">\n  <li class=\"govuk-task-list__item govuk-task-list__item--with-link :hover\">\n    <div class=\"govuk-task-list__name-and-hint\">\n      <a class=\"govuk-link govuk-task-list__link\" href=\"#\" aria-describedby=\"task-list-1-status\">\n        Company Directors\n      </a>\n    </div>\n    <div class=\"govuk-task-list__status\" id=\"task-list-1-status\">\n      Completed\n    </div>\n  </li>\n  <li class=\"govuk-task-list__item govuk-task-list__item--with-link\">\n    <div class=\"govuk-task-list__name-and-hint\">\n      <a class=\"govuk-link govuk-task-list__link\" href=\"#\" aria-describedby=\"task-list-2-status\">\n        Registered company details\n      </a>\n    </div>\n    <div class=\"govuk-task-list__status\" id=\"task-list-2-status\">\n      <strong class=\"govuk-tag govuk-tag--blue\">\n        Incomplete\n      </strong>\n    </div>\n  </li>\n  <li class=\"govuk-task-list__item govuk-task-list__item--with-link\">\n    <div class=\"govuk-task-list__name-and-hint\">\n      <a class=\"govuk-link govuk-task-list__link\" href=\"#\" aria-describedby=\"task-list-3-status\">\n        Business plan\n      </a>\n    </div>\n    <div class=\"govuk-task-list__status\" id=\"task-list-3-status\">\n      <strong class=\"govuk-tag govuk-tag--blue\">\n        Incomplete\n      </strong>\n    </div>\n  </li>\n</ul>"
         },
         {
           "name": "with hint text and additional states",

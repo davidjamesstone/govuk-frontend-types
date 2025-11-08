@@ -215,7 +215,7 @@
  * @property {CheckboxesItem[]} items - The checkbox items within the checkboxes component.
  * @property {Array} [values] - Array of values for checkboxes which should be checked when the page loads. Use this as an alternative to setting the `checked` option on each individual item.
  * @property {string} [classes] - Classes to add to the checkboxes container.
- * @property {object} [attributes] - HTML attributes (for example data attributes) to add to the anchor tag.
+ * @property {object} [attributes] - HTML attributes (for example data attributes) to add to the checkboxes container.
  */
 
 /**
@@ -781,8 +781,8 @@
  * @typedef {object} RadiosFormGroup
  * @property {string} [classes] - Classes to add to the form group (for example to show error state for the whole group).
  * @property {object} [attributes] - HTML attributes (for example data attributes) to add to the form group.
- * @property {RadiosFormGroupBeforeInputs} [beforeInputs] - Content to add before all radio items within the checkboxes component.
- * @property {RadiosFormGroupAfterInputs} [afterInputs] - Content to add after all radio items within the checkboxes component.
+ * @property {RadiosFormGroupBeforeInputs} [beforeInputs] - Content to add before all radio items within the radios component.
+ * @property {RadiosFormGroupAfterInputs} [afterInputs] - Content to add after all radio items within the radios component.
  */
 
 /**
@@ -826,7 +826,7 @@
  * @property {RadiosItem[]} items - The radio items within the radios component.
  * @property {string} [value] - The value for the radio which should be checked when the page loads. Use this as an alternative to setting the `checked` option on each individual item.
  * @property {string} [classes] - Classes to add to the radio container.
- * @property {object} [attributes] - HTML attributes (for example data attributes) to add to the radio input tag.
+ * @property {object} [attributes] - HTML attributes (for example data attributes) to add to the radio container.
  */
 
 /**

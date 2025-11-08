@@ -630,7 +630,7 @@ export const checkboxes = {
     { name: 'items', type: 'array', title: 'Items', hint: `The checkbox items within the checkboxes component.`, required: true, isComponent: false, subType: checkboxesItem },
     { name: 'values', type: 'array', title: 'Values', hint: `Array of values for checkboxes which should be checked when the page loads. Use this as an alternative to setting the \`checked\` option on each individual item.`, required: false, isComponent: false },
     { name: 'classes', type: 'string', title: 'Classes', hint: `Classes to add to the checkboxes container.`, required: false, isComponent: false },
-    { name: 'attributes', type: 'object', title: 'Attributes', hint: `HTML attributes (for example data attributes) to add to the anchor tag.`, required: false, isComponent: false }
+    { name: 'attributes', type: 'object', title: 'Attributes', hint: `HTML attributes (for example data attributes) to add to the checkboxes container.`, required: false, isComponent: false }
   ],
   component: {
     id: 'checkboxes',
@@ -1771,8 +1771,8 @@ export const radiosFormGroup = {
   keys: [
     { name: 'classes', type: 'string', title: 'Classes', hint: `Classes to add to the form group (for example to show error state for the whole group).`, required: false, isComponent: false },
     { name: 'attributes', type: 'object', title: 'Attributes', hint: `HTML attributes (for example data attributes) to add to the form group.`, required: false, isComponent: false },
-    { name: 'beforeInputs', type: 'object', title: 'Before inputs', hint: `Content to add before all radio items within the checkboxes component.`, required: false, isComponent: false, subType: radiosFormGroupBeforeInputs },
-    { name: 'afterInputs', type: 'object', title: 'After inputs', hint: `Content to add after all radio items within the checkboxes component.`, required: false, isComponent: false, subType: radiosFormGroupAfterInputs }
+    { name: 'beforeInputs', type: 'object', title: 'Before inputs', hint: `Content to add before all radio items within the radios component.`, required: false, isComponent: false, subType: radiosFormGroupBeforeInputs },
+    { name: 'afterInputs', type: 'object', title: 'After inputs', hint: `Content to add after all radio items within the radios component.`, required: false, isComponent: false, subType: radiosFormGroupAfterInputs }
   ]
 }
 
@@ -1858,7 +1858,7 @@ export const radios = {
     { name: 'items', type: 'array', title: 'Items', hint: `The radio items within the radios component.`, required: true, isComponent: false, subType: radiosItem },
     { name: 'value', type: 'string', title: 'Value', hint: `The value for the radio which should be checked when the page loads. Use this as an alternative to setting the \`checked\` option on each individual item.`, required: false, isComponent: false },
     { name: 'classes', type: 'string', title: 'Classes', hint: `Classes to add to the radio container.`, required: false, isComponent: false },
-    { name: 'attributes', type: 'object', title: 'Attributes', hint: `HTML attributes (for example data attributes) to add to the radio input tag.`, required: false, isComponent: false }
+    { name: 'attributes', type: 'object', title: 'Attributes', hint: `HTML attributes (for example data attributes) to add to the radio container.`, required: false, isComponent: false }
   ],
   component: {
     id: 'radios',
