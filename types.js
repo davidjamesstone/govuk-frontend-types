@@ -140,12 +140,12 @@
  * @property {boolean} [spellcheck] - Optional field to enable or disable the `spellcheck` attribute on the character count.
  * @property {CharacterCountCountMessage} [countMessage] - Additional options for the count message used by the character count component.
  * @property {string} [textareaDescriptionText] - Message made available to assistive technologies to describe that the component accepts only a limited amount of content. It is visible on the page when JavaScript is unavailable. The component will replace the `%{count}` placeholder with the value of the `maxlength` or `maxwords` parameter.
- * @property {object} [charactersUnderLimitText] - Message displayed when the number of characters is under the configured maximum, `maxlength`. This message is displayed visually and through assistive technologies. The component will replace the `%{count}` placeholder with the number of remaining characters. This is a [pluralised list of messages](https://frontend.design-system.service.gov.uk/localise-govuk-frontend).
+ * @property {object} [charactersUnderLimitText] - Message displayed when the number of characters is under the configured maximum, `maxlength`. This message is displayed visually and through assistive technologies. The component will replace the `%{count}` placeholder with the number of remaining characters. [Our pluralisation rules apply to this macro option](https://frontend.design-system.service.gov.uk/localise-govuk-frontend/#understanding-pluralisation-rules).
  * @property {string} [charactersAtLimitText] - Message displayed when the number of characters reaches the configured maximum, `maxlength`. This message is displayed visually and through assistive technologies.
- * @property {object} [charactersOverLimitText] - Message displayed when the number of characters is over the configured maximum, `maxlength`. This message is displayed visually and through assistive technologies. The component will replace the `%{count}` placeholder with the number of characters above the maximum. This is a [pluralised list of messages](https://frontend.design-system.service.gov.uk/localise-govuk-frontend).
- * @property {object} [wordsUnderLimitText] - Message displayed when the number of words is under the configured maximum, `maxwords`. This message is displayed visually and through assistive technologies. The component will replace the `%{count}` placeholder with the number of remaining words. This is a [pluralised list of messages](https://frontend.design-system.service.gov.uk/localise-govuk-frontend).
+ * @property {object} [charactersOverLimitText] - Message displayed when the number of characters is over the configured maximum, `maxlength`. This message is displayed visually and through assistive technologies. The component will replace the `%{count}` placeholder with the number of characters above the maximum.[Our pluralisation rules apply to this macro option](https://frontend.design-system.service.gov.uk/localise-govuk-frontend/#understanding-pluralisation-rules).
+ * @property {object} [wordsUnderLimitText] - Message displayed when the number of words is under the configured maximum, `maxwords`. This message is displayed visually and through assistive technologies. The component will replace the `%{count}` placeholder with the number of remaining words. [Our pluralisation rules apply to this macro option](https://frontend.design-system.service.gov.uk/localise-govuk-frontend/#understanding-pluralisation-rules).
  * @property {string} [wordsAtLimitText] - Message displayed when the number of words reaches the configured maximum, `maxwords`. This message is displayed visually and through assistive technologies.
- * @property {object} [wordsOverLimitText] - Message displayed when the number of words is over the configured maximum, `maxwords`. This message is displayed visually and through assistive technologies. The component will replace the `%{count}` placeholder with the number of characters above the maximum. This is a [pluralised list of messages](https://frontend.design-system.service.gov.uk/localise-govuk-frontend).
+ * @property {object} [wordsOverLimitText] - Message displayed when the number of words is over the configured maximum, `maxwords`. This message is displayed visually and through assistive technologies. The component will replace the `%{count}` placeholder with the number of characters above the maximum. [Our pluralisation rules apply to this macro option](https://frontend.design-system.service.gov.uk/localise-govuk-frontend/#understanding-pluralisation-rules).
  */
 
 /**
@@ -261,8 +261,8 @@
  * @property {string} name - Item-specific name attribute.
  * @property {string} [label] - Item-specific label text. If provided, this will be used instead of `name` for item label text.
  * @property {string} [value] - If provided, it will be used as the initial value of the input.
- * @property {string} [autocomplete] - Attribute to [identify input purpose](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See [autofill](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for full list of attributes that can be used.
- * @property {string} [pattern] - Attribute to [provide a regular expression pattern](https://html.spec.whatwg.org/multipage/sec-forms.html#the-pattern-attribute), used to match allowed character combinations for the input value.
+ * @property {string} [autocomplete] - Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) section in the HTML standard for full list of attributes that can be used.
+ * @property {string} [pattern] - Attribute to [provide a regular expression pattern](https://html.spec.whatwg.org/multipage/input.html#the-pattern-attribute), used to match allowed character combinations for the input value.
  * @property {string} [classes] - Classes to add to date input item.
  * @property {object} [attributes] - HTML attributes (for example data attributes) to add to the date input tag.
  */
@@ -576,7 +576,7 @@
  * @property {string} id - The ID of the input.
  * @property {string} name - The name of the input, which is submitted with the form data.
  * @property {string} [type] - Type of input control to render, for example, a password input control. Defaults to `"text"`.
- * @property {string} [inputmode] - Optional value for [inputmode](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode).
+ * @property {string} [inputmode] - Optional value for [the inputmode attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode).
  * @property {string} [value] - Optional initial value of the input.
  * @property {boolean} [disabled] - If `true`, input will be disabled.
  * @property {string} [describedBy] - One or more element IDs to add to the `aria-describedby` attribute, used to provide additional descriptive information for screenreader users.
@@ -587,10 +587,10 @@
  * @property {InputSuffix} [suffix] - Can be used to add a suffix to the text input component.
  * @property {InputFormGroup} [formGroup] - Additional options for the form group containing the text input component.
  * @property {string} [classes] - Classes to add to the input.
- * @property {string} [autocomplete] - Attribute to [identify input purpose](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html), for instance "postal-code" or "username". See [autofill](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for full list of attributes that can be used.
- * @property {string} [pattern] - Attribute to [provide a regular expression pattern](https://html.spec.whatwg.org/multipage/sec-forms.html#the-pattern-attribute), used to match allowed character combinations for the input value.
+ * @property {string} [autocomplete] - Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) section in the HTML standard for full list of attributes that can be used.
+ * @property {string} [pattern] - Attribute to [provide a regular expression pattern](https://html.spec.whatwg.org/multipage/input.html#the-pattern-attribute), used to match allowed character combinations for the input value.
  * @property {boolean} [spellcheck] - Optional field to enable or disable the `spellcheck` attribute on the input.
- * @property {string} [autocapitalize] - Optional field to enable or disable autocapitalisation of user input. See [autocapitalization](https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization) for a full list of values that can be used.
+ * @property {string} [autocapitalize] - Optional field to enable or disable autocapitalisation of user input. [See the Autocapitalization section in the HTML spec](https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization) for a full list of values that can be used.
  * @property {InputInputWrapper} [inputWrapper] - If any of `prefix`, `suffix`, `formGroup.beforeInput` or `formGroup.afterInput` have a value, a wrapping element is added around the input and inserted content. This object allows you to customise that wrapping element.
  * @property {object} [attributes] - HTML attributes (for example data attributes) to add to the input.
  */
@@ -731,7 +731,7 @@
  * @property {ErrorMessage} [errorMessage] - Can be used to add an error message to the text input component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`.
  * @property {PasswordInputFormGroup} [formGroup] - Additional options for the form group containing the text input component.
  * @property {string} [classes] - Classes to add to the input.
- * @property {string} [autocomplete] - Attribute to [identify input purpose](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html). See [autofill](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for full list of values that can be used. Default is `"current-password"`.
+ * @property {string} [autocomplete] - Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html). See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for full list of attributes that can be used. Default is `"current-password"`.
  * @property {object} [attributes] - HTML attributes (for example data attributes) to add to the input.
  * @property {string} [showPasswordText] - Button text when the password is hidden. Defaults to `"Show"`.
  * @property {string} [hidePasswordText] - Button text when the password is visible. Defaults to `"Hide"`.
@@ -1158,7 +1158,7 @@
  * @property {ErrorMessage} [errorMessage] - Can be used to add an error message to the textarea component. The error message component will not display if you use a falsy value for `errorMessage`, for example `false` or `null`.
  * @property {TextareaFormGroup} [formGroup] - Additional options for the form group containing the textarea component.
  * @property {string} [classes] - Classes to add to the textarea.
- * @property {string} [autocomplete] - Attribute to [identify input purpose](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html), for example `"street-address"`. See [autofill](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) for full list of attributes that can be used.
+ * @property {string} [autocomplete] - Attribute to meet [WCAG success criterion 1.3.5: Identify input purpose](https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html), for instance `"bday-day"`. See the [Autofill section in the HTML standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill) section in the HTML standard for full list of attributes that can be used.
  * @property {object} [attributes] - HTML attributes (for example data attributes) to add to the textarea.
  */
 
