@@ -1063,7 +1063,7 @@ export const paginationItemFormSchema = joi
   .keys({
     number: joi.string().allow('').label('Number'),
     visuallyHiddenText: joi.string().allow('').label('Visually hidden text'),
-    href: joi.string().required().label('Href'),
+    href: joi.string().allow('').label('Href'),
     current: joi.boolean().label('Current'),
     ellipsis: joi.boolean().label('Ellipsis')
   })

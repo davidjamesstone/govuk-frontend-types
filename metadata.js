@@ -1471,9 +1471,9 @@ export const paginationItem = {
   key: 'items',
   keyTitle: 'Items',
   keys: [
-    { name: 'number', type: 'string', title: 'Number', hint: `The pagination item text – usually a page number.`, required: false, isComponent: false },
-    { name: 'visuallyHiddenText', type: 'string', title: 'Visually hidden text', hint: `The visually hidden label (for the pagination item) which will be applied to an \`aria-label\` and announced by screen readers on the pagination item link. Should include page number.`, required: false, isComponent: false },
-    { name: 'href', type: 'string', title: 'Href', hint: `The link's URL.`, required: true, isComponent: false },
+    { name: 'number', type: 'string', title: 'Number', hint: `The pagination item text – usually a page number.  Required unless the item is an ellipsis.`, required: false, isComponent: false },
+    { name: 'visuallyHiddenText', type: 'string', title: 'Visually hidden text', hint: `The visually hidden label for the pagination item, which will be applied to an \`aria-label\` and announced by screen readers on the pagination item link. Should include page number. Defaults to, for example "Page 1".`, required: false, isComponent: false },
+    { name: 'href', type: 'string', title: 'Href', hint: `The link's URL. Required unless the item is an ellipsis.`, required: false, isComponent: false },
     { name: 'current', type: 'boolean', title: 'Current', hint: `Set to \`true\` to indicate the current page the user is on.`, required: false, isComponent: false },
     { name: 'ellipsis', type: 'boolean', title: 'Ellipsis', hint: `Use this option if you want to specify an ellipsis at a given point between numbers. If you set this option as \`true\`, any other options for the item are ignored.`, required: false, isComponent: false },
     { name: 'attributes', type: 'object', title: 'Attributes', hint: `The HTML attributes (for example, data attributes) you want to add to the anchor.`, required: false, isComponent: false }

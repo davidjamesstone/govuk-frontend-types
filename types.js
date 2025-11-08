@@ -648,9 +648,9 @@
 /**
  * PaginationItem component config
  * @typedef {object} PaginationItem
- * @property {string} [number] - The pagination item text – usually a page number.
- * @property {string} [visuallyHiddenText] - The visually hidden label (for the pagination item) which will be applied to an `aria-label` and announced by screen readers on the pagination item link. Should include page number.
- * @property {string} href - The link's URL.
+ * @property {string} [number] - The pagination item text – usually a page number.  Required unless the item is an ellipsis.
+ * @property {string} [visuallyHiddenText] - The visually hidden label for the pagination item, which will be applied to an `aria-label` and announced by screen readers on the pagination item link. Should include page number. Defaults to, for example "Page 1".
+ * @property {string} [href] - The link's URL. Required unless the item is an ellipsis.
  * @property {boolean} [current] - Set to `true` to indicate the current page the user is on.
  * @property {boolean} [ellipsis] - Use this option if you want to specify an ellipsis at a given point between numbers. If you set this option as `true`, any other options for the item are ignored.
  * @property {object} [attributes] - The HTML attributes (for example, data attributes) you want to add to the anchor.
