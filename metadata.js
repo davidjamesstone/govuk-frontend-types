@@ -2662,7 +2662,7 @@ export const warningText = {
  * @property {string} title - Display title for the component
  * @property {string} name - Component name (e.g., 'Label')
  * @property {string} variableName - Variable-safe version of the name (e.g., 'label')
- * @property {string} macroName - Nunjucks macro name (e.g., 'govukLabel')
+ * @property {MacroName} macroName - Nunjucks macro name (e.g., 'govukLabel')
  * @property {boolean} isFormComponent - Whether this is part of a form component
  */
 
@@ -2678,4 +2678,8 @@ export const warningText = {
  * @property {string} [key] - A single key identifier, if applicable (e.g., 'heading')
  * @property {string} [keyTitle] - A title for the single key, if applicable
  * @property {MetadataComponent} [component] - Nested component reference, if applicable
+ */
+
+/**
+ * @import { MacroName } from './enum.js'
  */
